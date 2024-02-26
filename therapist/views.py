@@ -1,10 +1,12 @@
 """ Therapist Views"""
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Therapists
 
 
 # Create your views here.
-def therapists(request):
-    """render a list of therapist available"""
-    return HttpResponse("Therapists list page")
+class TherapiList(generic.ListView):
+    """View for list therapists"""
+    queryset = Therapists.objects.all()
+    template_name = "therapist_list.html"

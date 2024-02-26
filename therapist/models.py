@@ -8,17 +8,20 @@ from django.contrib.auth.models import User
 class Therapists(models.Model):
     """Info about Therapists"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, default="my name")
     specialization = models.CharField(max_length=200)
     bio = models.TextField(max_length=1000, blank=True)
     experience_years = models.PositiveIntegerField()
-    location = models.CharField(max_length=200)
+    location = models.CharField(max_length=200,  blank=True)
     profile_picture = models.ImageField(upload_to='static/images/therapist_profile_pics/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     price = price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
 
+    class Meta:
+        """ order by name"""
+        ordering = ["name"]
 
-
-    # def __str__(self):
-    #     """"""
-    #     return self.user
+    def __str__(self):
+        """ Show the name in the list of therapisd admin"""
+        return f"{self.name}"
