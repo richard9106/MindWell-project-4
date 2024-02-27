@@ -1,0 +1,52 @@
+/*Utilities______________________*/
+
+
+/*Hero content___________________*/
+.hero-container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.hero-container > div{
+    flex: 0 0 calc(50% - 10px);
+}
+.hero-info{
+    display: grid;
+    align-content: center;
+}
+.hero-content-container{
+  width: 80%;
+  height: 60vh;
+  margin: 0 auto;
+  
+
+}
+.hero-container-images{
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+.hero-images{
+    position: absolute;
+}
+.img-front{
+    width: 60%;
+    height: auto;
+    border-left: 4px solid var(--primario);
+    border-bottom: 4px solid var(--primario);
+    z-index: 1;
+    right: 50px;
+    top: 0px;
+}
+.img-back{
+    width: 50%;
+    height: auto;
+    border-left: 4px solid var(--primario);
+    border-bottom: 4px solid var(--primario);
+    z-index: 1;
+    left:0;
+    top: 200px;
+}
+
+/*Services Section*/
