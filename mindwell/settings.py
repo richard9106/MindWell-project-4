@@ -48,14 +48,16 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home_page',
+    'about',
     'therapist',
+    'userpage',
 ]
 
 """We need to add a SITE_ID of 1 so that Django
 can handle multiple sites from one database"""
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'userpage'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

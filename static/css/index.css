@@ -1,52 +1,106 @@
 /*Utilities______________________*/
 
-
 /*Hero content___________________*/
-.hero-container{
-    display: flex;
-    min-height: 100vh;
+.hero-container {
+  display: flex;
+  min-height: 90vh;
 }
 
-.hero-container > div{
-    flex: 0 0 calc(50% - 10px);
+.hero-container > div {
+  flex: 0 0 calc(50% - 10px);
 }
-.hero-info{
-    display: grid;
-    align-content: center;
+.hero-info {
+  display: grid;
+  align-content: center;
 }
-.hero-content-container{
+.hero-content-container {
   width: 80%;
   height: 60vh;
   margin: 0 auto;
-  
-
 }
-.hero-container-images{
-    position: relative;
-    text-align: center;
-    top: 0;
-    left: 0;
+.hero-container-images {
+  position: relative;
+  text-align: center;
+  top: 0;
+  left: 0;
 }
-.hero-images{
-    position: absolute;
+.hero-images {
+  position: absolute;
 }
-.img-front{
-    width: 60%;
-    height: auto;
-    border-left: 4px solid var(--primario);
-    border-bottom: 4px solid var(--primario);
-    z-index: 1;
-    right: 50px;
-    top: 0px;
+.img-front {
+  width: 60%;
+  height: auto;
+  border-left: 4px solid var(--primario);
+  border-bottom: 4px solid var(--primario);
+  z-index: 1;
+  right: 50px;
+  top: 0px;
 }
-.img-back{
-    width: 50%;
-    height: auto;
-    border-left: 4px solid var(--primario);
-    border-bottom: 4px solid var(--primario);
-    z-index: 1;
-    left:0;
-    top: 200px;
+.img-back {
+  width: 50%;
+  height: auto;
+  border-left: 4px solid var(--primario);
+  border-bottom: 4px solid var(--primario);
+  z-index: 1;
+  left: 0;
+  top: 200px;
 }
 
-/*Services Section*/
+/*Services Section_____________________*/
+.services-section {
+  margin-top: 100px;
+  text-align: center;
+}
+.services-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  padding: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.services-title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primario);
+}
+
+.services > h3 {
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  color: var(--secundario);
+}
+.services > h3::before {
+  content: "";
+  width: 150px;
+  margin: 5px auto 0;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: var(--primario);
+}
+.services > figure {
+  border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.services > figure > img {
+  border-radius: 20px;
+}
+
+/*Work with us section _________________*/
+.work-with-us-section {
+  margin-top: 50px;
+  height: 30vh;
+  background-color: var(--primario-claro);
+}
+.work-with-us-section > h3 {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 25px;
+  color: var(--secundario);
+}

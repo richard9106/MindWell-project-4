@@ -1,6 +1,10 @@
-{% extends 'base.html'%} {% block content%} {% load static %}
+{% extends 'base.html'%}
+{% block content%}
+{% load static %}
 
 <section class="container-fluid hero-container">
+
+    <!-- hero info  -->
   <div class="hero-info">
     <div class="hero-content-container">
       <h1>
@@ -14,6 +18,7 @@
       <button class="btn btn-outline-success">Let's Start</button>
     </div>
   </div>
+  <!-- hero images  -->
   <div class="">
     <div class="hero-container-images">
       <figure class="hero-images img-front">
@@ -33,20 +38,58 @@
     </div>
   </div>
 </section>
+{% endblock %}
+{% block services%}
 
 <div class="services-section">
-  <h2>Some Nice title</h2>
+  <h2 class="services-title">Types of Therapy</h2>
+  <span class="fw-light" >We provide help in every way, do not hesitate to contact us</span>
+
   <div class="services-container">
+
     <div class="services">
-      <h3>Services 1</h3>
+        <figure>
+            <img src="{% static 'images/services1.jpg'%}" alt="mental health montain" />
+        </figure>
+      
+      <h3>Anxiety and Stress</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
+        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
+        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+      </p>
     </div>
     <div class="services">
-      <h3>Services 2</h3>
+        <figure>
+            <img src="{% static 'images/services2.jpg'%}" alt="drink probles soltions" />
+        </figure>
+      <h3>Depression</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
+        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
+        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+      </p>
     </div>
     <div class="services">
-      <h3>Services 3</h3>
+        <figure>
+            <img src="{% static 'images/services3.jpg'%}" alt="Happy couple" />
+        </figure>
+      <h3>Relationships</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
+        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
+        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+      </p>
     </div>
   </div>
 </div>
+{% endblock %}
 
-{% endblock%}
+{% block workwithus %}
+<div class="work-with-us-section">
+    <h3>Are you a Therapits??</h3>
+</div>
+{% endblock %}
+
+
+
