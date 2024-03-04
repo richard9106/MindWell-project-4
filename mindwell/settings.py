@@ -44,21 +44,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'django.contrib.sites',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'home_page',
     'about',
     'therapist',
-    'userpage',
+    'userpage.apps.UserpageConfig',
 ]
 
 """We need to add a SITE_ID of 1 so that Django
 can handle multiple sites from one database"""
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = 'userpage'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -94,6 +97,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mindwell.wsgi.application'
+
+
+
 
 
 # Database
@@ -137,6 +143,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 
 # Internationalization

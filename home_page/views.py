@@ -1,24 +1,33 @@
 """ view from home page"""
-
-from django.shortcuts import render
-from allauth.account.forms import SignupForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.contrib import messages
+# from allauth.account.forms import LoginForm
 
 
 # Create your views here.
 def index(request):
     """Home page View"""
-    return render(request, 'index.html', {'form': SignupForm})
+    
+    if request.method == 'POST':
+        lform = AuthenticationForm(request=request, data = request.POST)
+        sform = UserCreationForm(request.POST)
+        if lform.is_valid():
+            username = lform.cleaned_data['username']
+            password = lform.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect('userpage')
+        elif sform.is_valid():
+            sform.save()
+            return HttpResponseRedirect('userpage')
 
+         
+    else:
+        lform = AuthenticationForm()
+        sform = UserCreationForm()
+        return render(request, 'index.html', {
+            'login_form': lform, 'singup_form': sform})
 
-def login_view(request):
-    """ confir login user"""
-    if request.POST.get == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-
-        user = authenticate(request, username=username,
-                            password=password)
-        if user is None:
-            context = {"error": "You must have a User name"}
-            return render(request, "account/login.html", context)
