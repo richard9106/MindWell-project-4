@@ -1,3 +1,5 @@
-from django.contrib import admin
+"""regiter the modules to admin panel"""
 
-# Register your models here.
+
+
+

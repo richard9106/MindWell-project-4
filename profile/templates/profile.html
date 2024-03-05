@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Info Profile  -->
+            <div class="card border round-2 shadow p-3 mb-3">
+                <div class="card-body">
+                    <div class="circular--landscape ">
+                        <img class="img-thumbali rounded-circle mb-5 img-profile"  src="{{user.profile.image.url}} " alt="{{user.username}}">
+                    </div>
+                    <h2>{{user.profile.first_name}} {{user.last_name}}</h2>
+                    <p><strong> {{user.profile.profession }}</strong></p>
+                    <hr>
+                    <p>Email:<strong> {{user.profile.email }}</strong></p>
+                    <p>Location:<strong> {{user.profile.location }}</strong></p>
+                    <p>About Me:</p><strong> {{user.profile.description }}</strong>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eddit-profile">
+                        Eddit my information
+                      </button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteaccount">
+                        Delete my account
+                      </button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-8">
+           
+            <div class="card border round-2 shadow p-3 mb-3">
+                <div class="card-body">
+                    <!-- info next apointments  -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- modal form to edit profile  -->
+<div class="modal fade" id="eddit-profile" tabindex="-1" aria-labelledby="eddit-profilelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" id="eddit-profileLabel">My Profile</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{% url 'profile' %}"  method="POST">
+            {% csrf_token %}
+            <div class="modal-body">
+            <!-- from to edit profile  -->
+            {{from_profile|crispy}}
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Save changes</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete account confirmation  -->
+  <div class="modal fade" id="deleteaccount" tabindex="-1" aria-labelledby="deleteaccountLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" id="deleteaccountLabel"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete your account?
+            We will not save your data and it will be deleted immediately.<strong >This process cannot be undone.</strong></p> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+          <a href="{% url 'delete_profile' %}" class="btn btn-danger text-white">Delete my account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content%}

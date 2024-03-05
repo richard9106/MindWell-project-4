@@ -52,14 +52,14 @@ INSTALLED_APPS = [
     'home_page',
     'about',
     'therapist',
-    'userpage.apps.UserpageConfig',
+    'profile',
 ]
 
 """We need to add a SITE_ID of 1 so that Django
 can handle multiple sites from one database"""
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = '/'
 
 

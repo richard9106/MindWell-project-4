@@ -5,5 +5,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.userpage, name="userpage")
+    path('', views.profile, name="profile"),
+    path('delete/', views.delete_profile, name="delete_profile")
 ]
