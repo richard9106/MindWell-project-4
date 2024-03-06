@@ -4,11 +4,15 @@
 {% block content %}
 
 <div class="containerd d-flex work-with-us-container">
+    {% if messages %}
+    <div>{{messages}}</div>
+    {% endif %}
     <!-- form for request to work with us -->
     <div class="work-with-us-form-container">
         <form method="POST">
             {% csrf_token%}
             {{ work_with_us_form|crispy }}
+            <button type="submit" class="btn btn-success">Join to the family</button>
         </form>
 
     </div>

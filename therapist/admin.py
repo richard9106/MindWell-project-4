@@ -8,11 +8,11 @@ from .models import Therapists
 @admin.register(Therapists)
 class TherapistsAdmin(SummernoteModelAdmin):
     """Power Up admin """
-    list_display = ('name', 'specialization', 'experience_years')
-    search_fields = ['name']
+    list_display = ('first_name', 'specialization', 'experience_years')
+    search_fields = ['first_name']
     list_filter = ('experience_years',)
-    prepopulated_fields = {'specialization': ('name',)}
+    prepopulated_fields = {'specialization': ('first_name',)}
     summernote_fields = ('bio',)
 
 
-# Register your models here.
+

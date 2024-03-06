@@ -6,22 +6,25 @@
     <div class="row">
         <div class="col-md-4">
             <!-- Info Profile  -->
-            <div class="card border round-2 shadow p-3 mb-3">
+            <div class="card border round-2 shadow p-5 mb-3">
                 <div class="card-body">
-                    <div class="circular--landscape ">
-                        <img class="img-thumbali rounded-circle mb-5 img-profile"  src="{{user.profile.image.url}} " alt="{{user.username}}">
+                  <div class="img-profile-container">
+                    <div class="circular--landscape " >
+                        <img class="img-thumbali rounded-circle mb-5 img-profile "  src="{{user.profile.image.url}} " alt="{{user.username}}">
                     </div>
-                    <h2>{{user.profile.first_name}} {{user.last_name}}</h2>
-                    <p><strong> {{user.profile.profession }}</strong></p>
+                  </div>
+                    <h2 class="text-center">{{user.profile.first_name}} {{user.last_name}}</h2>
+                    <p class="text-center"><strong> {{user.profile.profession }}</strong></p>
                     <hr>
                     <p>Email:<strong> {{user.profile.email }}</strong></p>
                     <p>Location:<strong> {{user.profile.location }}</strong></p>
-                    <p>About Me:</p><strong> {{user.profile.description }}</strong>
+                    <p>About Me:</p>
+                    <p class="text-justify">{{user.profile.description }}</p> 
                 </div>
 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between my-3">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eddit-profile">
-                        Eddit my information
+                        Eddit my profile
                       </button>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteaccount">
                         Delete my account
@@ -35,6 +38,7 @@
             <div class="card border round-2 shadow p-3 mb-3">
                 <div class="card-body">
                     <!-- info next apointments  -->
+                    <h3>My appointments</h3>
                 </div>
 
             </div>
