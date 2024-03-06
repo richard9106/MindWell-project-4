@@ -1,0 +1,27 @@
+.work-with-us-container{
+    width: 90%;
+    margin: 50px auto 0;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* border: 1px solid var(--primario); */
+
+}
+
+.work-with-us-container > div{
+    flex: 1 1  300px;
+}
+.work-with-us-form-container{
+    padding: 20px;
+    border: 1px solid var(--primario);
+    border-radius: 10px;
+}
+@media (max-width : 768px){
+    .work-with-us-container{
+        flex-direction:column-reverse;
+        /* flex-wrap: none; */
+    }
+    /* .work-with-us-container > div{
+        flex: 0 0  calc(50% - 10px);
+    } */
+}

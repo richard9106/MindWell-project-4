@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home_page',
+    'work_with_us',
     'about',
     'therapist',
     'profile',

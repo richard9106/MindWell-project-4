@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
     <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/workwithus.css' %}" />
   </head>
 
   <body>
@@ -72,10 +73,10 @@
             
             {% else %}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Work with Us</a>
+              <a class="nav-link " aria-current="page" href="{% url 'work_with_us' %}">Work with Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>

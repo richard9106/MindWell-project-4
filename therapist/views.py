@@ -10,3 +10,5 @@ class TherapiList(generic.ListView):
     """View for list therapists"""
     queryset = Therapists.objects.all()
     template_name = "therapist_list.html"
+
+
