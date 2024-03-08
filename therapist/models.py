@@ -2,8 +2,6 @@
 
 from django.db import models
 # from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
-
 
 
 # Create your models here.
@@ -12,10 +10,10 @@ class Therapists(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     specialization = models.CharField(max_length=200)
-    bio = models.TextField(max_length=1000, blank=True)
+    bio = models.TextField()
     experience_years = models.PositiveIntegerField()
     location = models.CharField(max_length=200,  blank=True)
-    profile_picture = CloudinaryField('image', default='placeholder')
+    profile_image = models.ImageField(upload_to='t_images/', default='default.jpg')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     price = price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)

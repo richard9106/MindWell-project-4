@@ -5,6 +5,7 @@ from therapist.models import Therapists
 
 class WorkWithUsForm(forms.ModelForm):
     """ Create the model for collaborateForm"""
+    
     class Meta:
         """We select the files to apear in the form"""
         model = Therapists
@@ -14,15 +15,16 @@ class WorkWithUsForm(forms.ModelForm):
             'specialization',
             'experience_years',
             'location',
-            'profile_picture',
+            'profile_image',
             'price',
             'bio',
             )
         labels = {
             'first_name': 'First Name',
             'last_name': 'Lasst Name',
-            'profile_picture': 'Profile Image',
+            'profile_image': 'Profile Image',
             'experience_years': 'Experience Years',
             'price': 'Your Price',
             'bio': 'About Me',
         }
+

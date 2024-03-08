@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load cloudinary %}
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
@@ -14,13 +15,18 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <div>
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                    alt="placeholder image">                                </div>
+                                {% if therapy.profile_image.url %}
+                                <img class="card-img-top" src="{{ therapy.profile_image.url }}"
+                                  alt="{{ therapy.first_name}} image">
+                                {% else %}
+                                <img class="card-img-top" src=" {% static 'images/default.jpg' %} "
+                                  alt="{{ therapy.first_name}}">
+                                {% endif %}
+                            </div>
                                 <div class="image-flash">
                                     <p class="author">Name: {{ therapy.first_name }}</p>
                                 </div>
-                            </div>
+                            
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ therapy.specialization }}</h2>
                             </a>

@@ -3,13 +3,26 @@
 {% load static%}
 {% block content %}
 
+<!-- displaying Django messages -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 ">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible
+          fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
 <div class="containerd d-flex work-with-us-container">
-    {% if messages %}
-    <div>{{messages}}</div>
-    {% endif %}
     <!-- form for request to work with us -->
     <div class="work-with-us-form-container">
-        <form method="POST">
+        <form method="POST"  enctype="multipart/form-data">
             {% csrf_token%}
             {{ work_with_us_form|crispy }}
             <button type="submit" class="btn btn-success">Join to the family</button>

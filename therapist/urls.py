@@ -6,4 +6,4 @@ from . import views
 
 urlpatterns = [
     path('', views.TherapiList.as_view(), name="therapists"),
-]
+] 

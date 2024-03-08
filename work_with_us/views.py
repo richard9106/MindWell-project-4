@@ -1,14 +1,13 @@
-from django.shortcuts import render, redirect
-from .forms import WorkWithUsForm
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.shortcuts import render
+from .forms import WorkWithUsForm
 
 
 # Create your views here.
 def work_with_us(request):
     """ work with us form view"""
     if request.method == 'POST':
-        work_with_us_form = WorkWithUsForm(request.POST)
+        work_with_us_form = WorkWithUsForm(request.POST, request.FILES)
         if work_with_us_form.is_valid():
             work_with_us_form.save()
             messages.add_message(
@@ -24,4 +23,5 @@ def work_with_us(request):
     return render(
         request,
         'workwithus.html',
-        {"work_with_us_form": WorkWithUsForm})
+        {
+         "work_with_us_form": WorkWithUsForm})
