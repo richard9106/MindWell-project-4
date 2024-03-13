@@ -11,12 +11,12 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for therapist in therapists%}
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if therapist.profile_image.url %}
-                                {% cloudinary therapist.profile_image.url width=500 height=500 crop='fill' %}
+                                {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" %}
                                 {% else %}
                                 <img class="card-img-top" src=" {% static 'images/default.jpg' %} "
                                   alt="{{ therapy.first_name}}">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:5%}
+                {% if forloop.counter|divisibleby:4%}
             </div>
             <div class="row">
                 {% endif %}
