@@ -1,6 +1,7 @@
 """models to control therapist information"""
 
 from django.db import models
+from cloudinary.models import CloudinaryField
 # from django.contrib.auth.models import User
 
 
@@ -13,7 +14,7 @@ class Therapists(models.Model):
     bio = models.TextField()
     experience_years = models.PositiveIntegerField()
     location = models.CharField(max_length=200,  blank=True)
-    profile_image = models.ImageField(upload_to='t_images/', default='default.jpg')
+    profile_image = CloudinaryField('image')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     price = price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)

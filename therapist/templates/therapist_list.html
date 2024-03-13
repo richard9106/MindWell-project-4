@@ -10,34 +10,33 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for therapy in therapists_list %}
-                <div class="col-md-4">
+                {% for therapist in therapists%}
+                <div class="col-md-2">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if therapy.profile_image.url %}
-                                <img class="card-img-top" src="{{ therapy.profile_image.url }}"
-                                  alt="{{ therapy.first_name}} image">
+                                {% if therapist.profile_image.url %}
+                                {% cloudinary therapist.profile_image.url width=500 height=500 crop='fill' %}
                                 {% else %}
                                 <img class="card-img-top" src=" {% static 'images/default.jpg' %} "
                                   alt="{{ therapy.first_name}}">
                                 {% endif %}
                             </div>
                                 <div class="image-flash">
-                                    <p class="author">Name: {{ therapy.first_name }}</p>
+                                    <p class="author">Name: {{ therapist.first_name }}</p>
                                 </div>
                             
                             <a href="#" class="post-link">
-                                <h2 class="card-title">{{ therapy.specialization }}</h2>
+                                <h2 class="card-title">{{ therapist.specialization }}</h2>
                             </a>
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ therapy.experience_years}} years
+                            <p class="card-text text-muted h6">{{ therapist.experience_years}} years
                             </p>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:5%}
             </div>
             <div class="row">
                 {% endif %}

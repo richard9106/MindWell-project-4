@@ -28,3 +28,11 @@ class WorkWithUsForm(forms.ModelForm):
             'bio': 'About Me',
         }
 
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['profile_image'].options = {
+                'tags': 'new_image',
+                'format': 'png',
+                'crop': 'limit', 'width': 1000, 'height': 1000,
+                'eager': [{'crop': 'fill', 'width': 500, 'height': 500}]
+            }
