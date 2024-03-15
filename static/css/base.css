@@ -60,15 +60,34 @@ figure{
 /*end globals-___________________*/
 
 /*forms styles-___________________*/
+form input{
+    min-height:30px;
+    font-size: 1.5rem !important;
+
+}
+form input[type=checkbox]{
+    min-height: auto;
+}
 
 .login-main-container{
     max-width: 500px;
     padding: 40px;
+    /* From https://css.glass */
+    background: rgba(30, 30, 30, 0.195);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.2px);
+    border: 1px solid rgba(30, 30, 30, 0.3);
 }
 .card-login {
     border-radius: 20px;
-    box-shadow:0px 12px 20px -5px #fa8920;
+    box-shadow:0px 12px 20px -5px #5f564e;
 }
+.login-title, .login-slug{
+    color: var(--secundario);
+    font-size: 2.5rem;
+}
+
 .login-button{
     width: 100%;
 }
