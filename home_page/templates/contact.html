@@ -6,16 +6,42 @@
 <div class="container ">
     <h2 class="text-center my-5 about-title">Contact us</h2>
     <div class="d-flex justify-content-center">
-
+    <!-- contact form  -->
         <div class="work-with-us-form-container">
-            <form method="POST" enctype="multipart/form-data" class="p-5">
-              {% csrf_token%} {{ form|crispy }}
+            <form method="POST"  class="p-5">
+              {% csrf_token%} 
+              {{form|crispy }}
               <button type="submit" class="btn btn-success mt-3">
                 Send
               </button>
             </form>
+    <!-- Messages -->
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    {% for message in messages %}
+                    <div
+                      class="alert {{ message.tags }} alert-dismissible
+                        fade show"
+                      id="msg"
+                      role="alert"
+                    >
+                      {{ message | safe }}
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
           </div>
      
+
+    <!-- Content Conatac page -->
       <div class="content-container ">
         <div>
           <h4 class="subtitles">Vision</h4>

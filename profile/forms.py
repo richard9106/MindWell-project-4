@@ -44,3 +44,5 @@ class UserProfileForm(forms.ModelForm):
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                 if field in labels:
                     self.fields[field].label = labels[field]
+
+
