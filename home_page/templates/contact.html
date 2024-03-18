@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% block content%}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<div class="container ">
+    <h2 class="text-center my-5 about-title">Contact us</h2>
+    <div class="d-flex justify-content-center">
+
+        <div class="work-with-us-form-container">
+            <form method="POST" enctype="multipart/form-data" class="p-5">
+              {% csrf_token%} {{ form|crispy }}
+              <button type="submit" class="btn btn-success mt-3">
+                Send
+              </button>
+            </form>
+          </div>
+     
+      <div class="content-container ">
+        <div>
+          <h4 class="subtitles">Vision</h4>
+          <p>
+            Our vision is to create a compassionate and accessible online platform
+            where individuals seeking support can easily connect with qualified
+            therapists to address their mental health and well-being needs. We
+            aspire to foster a community where seeking therapy is normalized and
+            celebrated as a proactive step towards personal growth and healing.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

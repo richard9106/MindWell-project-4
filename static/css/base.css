@@ -20,9 +20,22 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
 }
+h2{
+    font-size: 3.2rem;
+    
+}
+h3{
+    font-size: 3rem;
+    color: var(--secundario);
+}
+p{
+    font-weight: 300;
+}
+a{
+    text-decoration: none!important;
+}
 a.nav-link{
     font-size: 1.6rem;
-    text-decoration: none;
     color: black;
 }
 a.nav-link:hover, a.active{
@@ -56,8 +69,25 @@ figure{
     margin: 0;
     padding: 0;
 }
+ul > li{
+    list-style: none;
+}
 
 /*end globals-___________________*/
+
+/*Utilities_______________________*/
+.check-icon{
+    color: #1c532c;
+    font-size: 2rem;
+    margin-right: 15px;
+}
+.subtitles{
+    position: relative;
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+
 
 /*forms styles-___________________*/
 form input{

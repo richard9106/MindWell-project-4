@@ -8,3 +8,7 @@ def index(request):
     """Home page View"""
     return render(request, 'index.html')
 
+
+def contact(request):
+    """contact page view"""
+    return render(request, 'contact.html')

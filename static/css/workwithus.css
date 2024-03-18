@@ -16,7 +16,12 @@
     border: 1px solid var(--primario);
     border-radius: 10px;
 }
-@media (max-width : 768px){
+
+.work-with-us-title{
+    color: var(--secundario);
+}
+
+@media (max-width : 990px){
     .work-with-us-container{
         flex-direction:column-reverse;
         /* flex-wrap: none; */

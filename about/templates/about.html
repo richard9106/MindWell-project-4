@@ -1,5 +1,37 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<h1>about page</h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container ">
+  <h2 class="text-center my-5 about-title">About MindWell</h2>
+  <div class="d-flex justify-content-center">
+    <div class="image-about-contianer">
+      <img class="about-image" src="{% static 'images/aboutimage.jpg' %}" alt="person doing yoga">
+    </div>
+    <div class="content-container ">
+      <div>
+        <h4 class="subtitles">Vision</h4>
+        <p>
+          Our vision is to create a compassionate and accessible online platform
+          where individuals seeking support can easily connect with qualified
+          therapists to address their mental health and well-being needs. We
+          aspire to foster a community where seeking therapy is normalized and
+          celebrated as a proactive step towards personal growth and healing.
+        </p>
+      </div>
+      <div class="image-about-contianer-mobile my-5">
+        <img class="about-image-mobile" src="{% static 'images/aboutimage.jpg' %}" alt="person doing yoga">
+      </div>
+      <div>
+        <h4 class="subtitles">Mission</h4>
+        <p>
+          Our vision is to create a compassionate and accessible online platform
+          where individuals seeking support can easily connect with qualified
+          therapists to address their mental health and well-being needs. We
+          aspire to foster a community where seeking therapy is normalized and
+          celebrated as a proactive step towards personal growth and healing.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
