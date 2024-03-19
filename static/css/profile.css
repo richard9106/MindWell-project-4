@@ -1,3 +1,5 @@
+/*USER PROFILE*/
+
 .circular--landscape {
     display: inline-block;
     position: relative;
@@ -16,3 +18,42 @@
     margin: 0 auto;
     text-align: center;
 }
+.profile-name, .apointments-title{
+    font-size: 1.6rem!important;
+}
+.author{
+    position: relative;
+    font-weight: 600;
+    color: var(--secundario);
+}
+.author:before{
+    content: "";
+    width: 150px;
+    margin: 0px auto 0;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    background-color: var(--primario);
+}
+.image-container img:hover{
+    scale: 1.1;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.image-container{
+    overflow: hidden;
+}
+
+/*THERAPIST PROFILE*/
+.therapist-name{
+    font-weight: 600;
+    text-align: center;
+}
+.therapist-spc{
+    font-size: smaller;
+    color: var(--secundario);
+}
+

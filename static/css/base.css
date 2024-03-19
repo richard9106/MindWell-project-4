@@ -33,11 +33,10 @@ p{
 }
 a{
     text-decoration: none!important;
-}
-a.nav-link{
+    color: #000;
     font-size: 1.6rem;
-    color: black;
 }
+
 a.nav-link:hover, a.active{
     color: #fa8920;
 }
@@ -89,6 +88,7 @@ ul > li{
 
 
 
+
 /*forms styles-___________________*/
 form input{
     min-height:30px;
@@ -100,7 +100,7 @@ form input[type=checkbox]{
 }
 
 .login-main-container{
-    max-width: 500px;
+    max-width: 600px;
     padding: 40px;
     /* From https://css.glass */
     background: rgba(30, 30, 30, 0.195);

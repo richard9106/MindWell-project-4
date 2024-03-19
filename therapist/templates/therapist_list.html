@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- list of therapists-->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for therapist in therapists%}
@@ -16,23 +16,31 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if therapist.profile_image.url %}
+                                <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
                                 {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" %}
+                                </a>
                                 {% else %}
+                                <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
                                 <img class="card-img-top" src=" {% static 'images/default.jpg' %} "
                                   alt="{{ therapy.first_name}}">
+                                </a>
                                 {% endif %}
                             </div>
-                                <div class="image-flash">
-                                    <p class="author">Name: {{ therapist.first_name }}</p>
-                                </div>
-                            
                             <a href="#" class="post-link">
-                                <h2 class="card-title">{{ therapist.specialization }}</h2>
+                                <div class="image-flash text-center">
+                                    <p class="author">{{ therapist.first_name }}</p>
+                                </div>
                             </a>
+                          
+                                <p class="card-title text-center">{{ therapist.specialization }}</p>
+                            
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ therapist.experience_years}} years
-                            </p>
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text text-muted h6">{{ therapist.experience_years}} years</p>
+                                <p class=" text-muted h6">{{ therapist.location}}</p>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

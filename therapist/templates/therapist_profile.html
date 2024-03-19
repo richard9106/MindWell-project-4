@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% load static %} {% block content %} 
+{% load cloudinary %}
+
+<div class="container">
+  <div class="row">
+   <!-- therapist image and basic info -->
+    <div class="col-md-4">
+            <div class="card border round-2 shadow p-5 mb-3">
+                
+                    {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" class="img-thumbali rounded-circle mb-5 img-profile "%}
+                
+                <p class="therapist-name ">
+                    {{ therapist.first_name }} {{ therapist.last_name }}
+                </p>
+                <hr>
+                <p class="therapist-spc">
+                    {{ therapist.specialization }} 
+                </p>
+                <div class="d-flex justify-content-between">
+                    <span>Years of experiences</span>
+                    <span>{{therapist.experience_years }}</span>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <span>{{therapist.price}}$/h.</span>
+                </div>
+                
+            </div>
+        </div>
+
+    <!-- therapist imfo -->
+        <div class="col-md-8">
+            <div class="card border round-2 shadow p-5 mb-3">
+                <h4>About Me</h4>
+                <div class="">
+                    <p class="card-text">{{ therapist.bio | safe }}</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -6,4 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.therapilist, name="therapists"),
-] 
+    path('<first_name>/',
+         views.therapist_profile,
+         name='therapist_profile'),
+]

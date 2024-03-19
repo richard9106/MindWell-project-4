@@ -1,5 +1,5 @@
-.d-flex{
-    gap: 50px;
+.about-container {
+    gap:50px;
 }
 
 .d-flex > div{
