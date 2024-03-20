@@ -1,7 +1,6 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %} 
 {% url 'therapists' as therapists_url %} 
-
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %} 
 {% url 'account_logout' as logout_url %} 
@@ -40,7 +39,8 @@
     />
 
     <!-- jquery cdn  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    
 
     <!-- Custom css  -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
@@ -171,7 +171,8 @@
       </div>
     </div>
     
-
+    {% block extras %}
+    {% endblock %}
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -21,7 +21,6 @@ def profile(request):
             messages.success(request, 'Your profile was update successfully')
             return redirect('profile')
         else:
-     
             messages.error(request, 'Something has gone wrong check your form')
     return render(request, 'profile.html', {'from_profile': form_profile})
 

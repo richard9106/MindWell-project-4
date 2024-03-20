@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %} 
 {% load cloudinary %}
+{% load crispy_forms_tags %}
 
 <div class="container">
   <div class="row">
@@ -13,7 +14,7 @@
                     {{ therapist.first_name }} {{ therapist.last_name }}
                 </p>
                 <hr>
-                <p class="therapist-spc">
+                <p class="therapist-spc ">
                     {{ therapist.specialization }} 
                 </p>
                 <div class="d-flex justify-content-between">
@@ -24,7 +25,9 @@
                 <div class="text-center">
                     <span>{{therapist.price}}$/h.</span>
                 </div>
-                
+                <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#makeappointment">
+                    Make and appointment
+                  </button>
             </div>
         </div>
 
@@ -39,4 +42,28 @@
     </div>
 </div>
 
+
+<div class="modal" tabindex="-1" id="makeappointment">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Make an appointment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          {% csrf_token%} 
+          {{appointment_form|crispy }}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
+
+
+

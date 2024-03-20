@@ -2,6 +2,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from .models import Therapists
+from .forms import UserAppointmentManager
 
 
 # Create your views here.
@@ -24,6 +25,7 @@ def therapist_profile(request, first_name):
     return render(
         request,
         "therapist_profile.html",
-        {"therapist": therapist}
+        {"therapist": therapist,
+         "appointment_form": UserAppointmentManager}
     )
 

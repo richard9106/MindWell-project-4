@@ -63,7 +63,6 @@ INSTALLED_APPS = [
     'about',
     'therapist',
     'profile',
-    'appointments',
 ]
 
 """We need to add a SITE_ID of 1 so that Django

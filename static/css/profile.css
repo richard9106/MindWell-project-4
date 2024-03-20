@@ -1,3 +1,6 @@
+
+
+
 /*USER PROFILE*/
 
 .circular--landscape {
@@ -57,3 +60,11 @@
     color: var(--secundario);
 }
 
+.modal-dialog{
+    top:25%;
+    min-width: 80%;
+    min-height: auto;
+}
+.fc-view-harness{
+    min-height: 700px
+}

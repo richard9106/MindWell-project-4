@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4">
             <!-- Info Profile  -->
             <div class="card border round-2 shadow p-5 mb-3">
                 <div class="card-body">
@@ -14,26 +14,26 @@
                     </div>
                   </div>
                     <h2 class="text-center profile-name">{{user.profile.first_name}} {{user.last_name}}</h2>
-                    <p class="text-center"><strong> {{user.profile.profession }}</strong></p>
+                    <p class="text-center "><strong> {{user.profile.profession }}</strong></p>
                     <hr>
                     <p>Email:<strong> {{user.profile.email }}</strong></p>
                     <p>Location:<strong> {{user.profile.location }}</strong></p>
                     <p>About Me:</p>
-                    <p class="text-justify">{{user.profile.description }}</p> 
+                    {{user.profile.description }} 
                 </div>
 
                 <div class="d-flex justify-content-between my-3">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eddit-profile">
+                    <button id=editProfileButton type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eddit-profile">
                         Eddit my profile
                       </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteaccount">
+                    <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteaccount">
                         Delete my account
                       </button>
                 </div>
                 
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8">
            
             <div class="card border round-2 shadow p-3 mb-3">
                 <div class="card-body">
@@ -92,3 +92,7 @@
   </div>
 
 {% endblock content%}
+
+{% block extras %}
+<script src="{% static 'js/askprofileinfo.js' %}"></script>
+{% endblock %}
