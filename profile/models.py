@@ -39,10 +39,13 @@ class Profile(models.Model):
         return f"{self.user} | location: {self.location}"
 
 
-@receiver(post_save, sender=User)
+# create user afert some one create an account
+# @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     """create the user"""
     if created:
         Profile.objects.create(user=instance)
-    instance.profile.save()
+
+
+post_save.connect(create_user_profile, sender=User)
 

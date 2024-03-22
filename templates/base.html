@@ -66,10 +66,10 @@
               <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">My Apointments</a>
+              <a class="nav-link" aria-current="page" href="{% url 'my_appointments' %}">My Apointments</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=" {% url 'therapists' %}">Therapists</a>
+              <a class="nav-link" href=" {% url 'therapists' %}">Look for a therapists</a>
             </li>
             
             {% else %}

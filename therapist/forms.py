@@ -9,5 +9,15 @@ class UserAppointmentManager(forms.ModelForm):
     class Meta:
         """select the model"""
         model = AppointmentManager
-        fields = ('client', 'date', 'message')
-       
+        fields = (
+                  'date_appointment',
+                  'time',
+                  'message',)
+    date_appointment = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'type': 'date'
+            }
+        )
+    )
+    

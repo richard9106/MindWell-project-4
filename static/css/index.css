@@ -14,9 +14,13 @@
   align-content: center;
 }
 .hero-content-container {
+  display: flex;
+  flex-direction: column;
   width: 80%;
   height: 60vh;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 .hero-container-images {
   position: relative;
@@ -43,7 +47,17 @@
   border-bottom: 4px solid var(--primario);
   z-index: 1;
   left: 0;
-  top: 200px;
+  top: 35vh;
+}
+/*Responsive hero section*/
+@media (max-width:1024px){
+  .img-front{
+    width: 70%;
+  }
+  .img-back{
+    width: 60%;
+    /* top:300px; */
+  }
 }
 
 /*Services Section_____________________*/
@@ -84,12 +98,14 @@
 }
 .services > figure {
   border-radius: 20px;
-  width: 80%;
+  max-width: 60%;
+  min-width: 50%;
   margin: 0 auto;
   text-align: center;
 }
 .services > figure > img {
   border-radius: 20px;
+
 }
 
 /*Work with us section _________________*/

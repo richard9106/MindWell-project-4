@@ -1,161 +1,172 @@
 :root {
-    --primario: #fa8920;
-    --primario-claro: rgba(250, 137, 32, .5);
-    --secundario: #1c532c;
-    --blanco: #FFF;
-    --negro: #000;
+  --primario: #fa8920;
+  --primario-claro: rgba(250, 137, 32, 0.5);
+  --secundario: #1c532c;
+  --blanco: #fff;
+  --negro: #000;
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%; 
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /** Globals _________________**/
 body {
-    font-size: 1.6rem;
-    line-height: 1.5;
+  position: relative;
+  font-size: 
+  1.6rem;
+  line-height: 1.5;
 }
-h2{
-    font-size: 3.2rem;
-    
+h2 {
+  font-size: 3.2rem;
 }
-h3{
-    font-size: 3rem;
-    color: var(--secundario);
+h3 {
+  font-size: 3rem;
+  color: var(--secundario);
 }
-p{
-    font-size: 1.2rem;
-    font-weight: 300;
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
-a{
-    text-decoration: none!important;
-    color: #000;
-    font-size: 1.6rem;
-}
-
-a.nav-link:hover, a.active{
-    color: #fa8920;
-}
-img{
-    width: 100%;
-    height: 100%;
+a {
+  text-decoration: none !important;
+  color: #000;
+  font-size: 1.6rem;
 }
 
-a.brand-name{
-    font-size: 1.6rem;
+a.nav-link:hover,
+a.active {
+  color: #fa8920;
 }
-#logo{
-    width: 100px;
-}
-
-a.btn-login,a.btn-signup{
-    font-size: 1.6rem;
-}
-.btn-outline-success:hover{
-    background-color: var(--primario-claro);
-    width: 200px;
-}
-.btn-outline-success, .btn-large{
-    width: 200px;
-    padding: 10px;
+img {
+  width: 100%;
+  height: 100%;
 }
 
-figure{
-    margin: 0;
-    padding: 0;
+a.brand-name {
+  font-size: 1.6rem;
 }
-ul > li{
-    list-style: none;
+#logo {
+  width: 100px;
+}
+
+a.btn-login,
+a.btn-signup {
+  font-size: 1.6rem;
+}
+.btn-outline-success:hover {
+  background-color: var(--primario);
+  width: 200px;
+}
+.btn-outline-success,
+.btn-large {
+  width: 200px;
+  padding: 10px;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+ul > li {
+  list-style: none;
 }
 
 /*end globals-___________________*/
 
 /*Utilities_______________________*/
-.check-icon{
-    color: #1c532c;
-    font-size: 2rem;
-    margin-right: 15px;
+.check-icon {
+  color: #1c532c;
+  font-size: 2rem;
+  margin-right: 15px;
 }
-.subtitles{
-    position: relative;
-    font-size: 2rem;
-    color: var(--primario);
+.subtitles {
+  position: relative;
+  font-size: 2rem;
+  color: var(--primario);
 }
-.font-responsive{
-    font-size: clamp(16px, 1vw, 36px);
+.font-responsive {
+  font-size: clamp(16px, 1vw, 36px);
 }
-
-
-
 
 /*forms styles-___________________*/
-form input{
-    min-height:30px;
-    font-size: 1.5rem !important;
-
+form input {
+  min-height: 30px;
+  font-size: 1.5rem !important;
 }
-form input[type=checkbox]{
-    min-height: auto;
+form input[type="checkbox"] {
+  min-height: auto;
 }
 
-.login-main-container{
-    max-width: 600px;
-    padding: 40px;
-    /* From https://css.glass */
-    background: rgba(30, 30, 30, 0.195);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.2px);
-    border: 1px solid rgba(30, 30, 30, 0.3);
+.login-main-container {
+  max-width: 600px;
+  padding: 40px;
+  /* From https://css.glass */
+  background: rgba(30, 30, 30, 0.195);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  border: 1px solid rgba(30, 30, 30, 0.3);
 }
 .card-login {
+  border-radius: 20px;
+  box-shadow: 0px 12px 20px -5px #5f564e;
+}
+.login-title,
+.login-slug {
+  color: var(--secundario);
+  font-size: 2.5rem;
+}
+
+.login-button {
+  width: 100%;
+}
+.login-button:hover {
+  background-color: var(--primario);
+  color: #1c532c;
+}
+.divider-container {
+  position: relative;
+}
+.divider-or::before {
+  content: "or";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  background-color: #fff;
+}
+button {
+  font-size: 1.2rem !important;
+}
+.btn-success:hover {
+  background-color: var(--primario) !important;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .login-main-container {
+    max-width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card-login {
     border-radius: 20px;
-    box-shadow:0px 12px 20px -5px #5f564e;
-}
-.login-title, .login-slug{
-    color: var(--secundario);
-    font-size: 2.5rem;
+    box-shadow: 0px 12px 20px -10px #fa8920;
+  }
 }
 
-.login-button{
-    width: 100%;
-}
-.login-button:hover{
-    background-color: var(--primario);
-    color: #1c532c;
-}
-.divider-container{
-    position: relative;
-}
-.divider-or::before{
-    content: 'or';
-    position: absolute;
-    top:20px;
-    left: 50%;
-    background-color: #FFF;
-    
-}
-button{
-    font-size: 1.2rem !important;
-}
-.btn-success:hover{
-    background-color: var(--primario)!important;
-    color: black;
-}
-
-@media (max-width: 768px){
-    .login-main-container{
-        max-width: 80%;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    .card-login {
-        border-radius: 20px;
-        box-shadow:0px 12px 20px -10px #fa8920;
-    }
+footer{
+  width: 100%;
+  background-color: hsl(29, 96%, 55%);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }

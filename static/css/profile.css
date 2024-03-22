@@ -54,6 +54,7 @@
 .therapist-name{
     font-weight: 600;
     text-align: center;
+    margin: 0;
 }
 .therapist-spc{
     font-size: smaller;

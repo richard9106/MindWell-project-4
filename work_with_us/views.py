@@ -6,6 +6,7 @@ from .forms import WorkWithUsForm
 # Create your views here.
 def work_with_us(request):
     """ work with us form view"""
+    
     if request.method == 'POST':
         work_with_us_form = WorkWithUsForm(request.POST, request.FILES)
         if work_with_us_form.is_valid():

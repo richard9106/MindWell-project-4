@@ -14,7 +14,7 @@
                     {{ therapist.first_name }} {{ therapist.last_name }}
                 </p>
                 <hr>
-                <p class="therapist-spc ">
+                <p class="therapist-spc text-center ">
                     {{ therapist.specialization }} 
                 </p>
                 <div class="d-flex justify-content-between">
@@ -50,16 +50,19 @@
           <h5 class="modal-title">Make an appointment</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form method="POST">
         <div class="modal-body">
           
           {% csrf_token%} 
           {{appointment_form|crispy }}
           </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Done</button>
+          </div>
+        </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success">Done</button>
-        </div>
+      
       </div>
     </div>
   </div>
