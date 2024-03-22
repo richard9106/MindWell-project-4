@@ -1,6 +1,5 @@
 from django import forms
 from .models import Profile
-from django.contrib.auth.models import User
 
 
 class UserProfileForm(forms.ModelForm):
@@ -9,7 +8,7 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         """define the model and exclude user name"""
         model = Profile
-        exclude = ('user', 'create_on')
+        exclude = ('user', 'create_on', 'completed_info')
 
         def __init__(self, *args, **kwargs):
             """

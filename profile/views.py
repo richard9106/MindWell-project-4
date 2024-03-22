@@ -5,7 +5,7 @@ from django.contrib import messages
 from .models import Profile
 from django.contrib.auth import logout
 from .forms import UserProfileForm
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 @login_required
@@ -17,6 +17,7 @@ def profile(request):
     if request.method == 'POST':
         form_profile = UserProfileForm(request.POST, instance=profile_model)
         if form_profile.is_valid():
+            profile_model.completed_info = True
             form_profile.save()
             messages.success(request, 'Your profile was update successfully')
             return redirect('profile')

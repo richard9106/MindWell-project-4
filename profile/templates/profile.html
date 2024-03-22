@@ -52,12 +52,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title fs-5" id="eddit-profileLabel">My Profile</h3>
+          <h3 class="modal-title fs-5 text-center" id="eddit-profileLabel">My Profile</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div>
+          <p class="text-center fw-lighter mb-0 mt-3">Please complete your personal information</p>
         </div>
         <form action="{% url 'profile' %}"  method="POST">
             {% csrf_token %}
-            <div class="modal-body">
+            <div class="modal-body p-5">
             <!-- from to edit profile  -->
             {{from_profile|crispy}}
             
@@ -73,7 +76,7 @@
 
   <!-- Delete account confirmation  -->
   <div class="modal fade" id="deleteaccount" tabindex="-1" aria-labelledby="deleteaccountLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title fs-5" id="deleteaccountLabel"></h3>
@@ -90,9 +93,17 @@
       </div>
     </div>
   </div>
+{% if not user.profile.completed_info%}
+<script>
+  $(document).ready(function() {
+    let currentUrl = location.pathname
+    if (currentUrl == "/profile/")
+        setTimeout(function(){
+        $("#eddit-profile").modal('show');
+    }, 1000)
+});
+</script>
+{%endif%}
 
 {% endblock content%}
 
-{% block extras %}
-<script src="{% static 'js/askprofileinfo.js' %}"></script>
-{% endblock %}

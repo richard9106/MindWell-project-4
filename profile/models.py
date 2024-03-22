@@ -29,6 +29,7 @@ class Profile(models.Model):
     create_on = models.DateTimeField(
         auto_now_add=True,
         )
+    completed_info = models.BooleanField(default=False)
 
     class Meta:
         """meta class"""

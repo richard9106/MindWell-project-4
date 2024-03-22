@@ -60,11 +60,11 @@
     color: var(--secundario);
 }
 
-.modal-dialog{
+ .modal-dialog{
     top:25%;
-    min-width: 80%;
+    min-width: 40%;
     min-height: auto;
-}
-.fc-view-harness{
+} 
+/* .fc-view-harness{
     min-height: 700px
-}
+} */
