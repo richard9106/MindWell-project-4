@@ -2,7 +2,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-from .models import Therapists, AppointmentManager
+from django.contrib.auth.models import User
+from .models import Therapists
 from .forms import UserAppointmentManager
 
 
@@ -23,13 +24,14 @@ def therapist_profile(request, first_name):
 
     queryset = Therapists.objects.all()
     therapist = get_object_or_404(queryset, first_name=first_name)
- 
 
     if request.method == 'POST':
         appointment_form = UserAppointmentManager(request.POST)
         if appointment_form.is_valid():
-            # appointment_form.cleaned_data()
-            appointment_form.save()
+            instance = appointment_form.save(commit=False)
+            instance.client = User.objects.get(username=request.user.username)
+            instance.therapist = Therapists.objects.get(first_name=first_name)
+            instance.save()
 
             messages.add_message(
                 request,

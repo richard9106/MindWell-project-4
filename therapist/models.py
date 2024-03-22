@@ -47,7 +47,7 @@ HOURS_CHOICES = [
 # Create your models here.
 class AppointmentManager(models.Model):
     """Model for link user and their appointments"""
-    client = models.ForeignKey(Profile,
+    client = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='user_appointment',
                                )

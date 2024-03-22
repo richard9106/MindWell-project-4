@@ -10,10 +10,14 @@ class UserAppointmentManager(forms.ModelForm):
         """select the model"""
         model = AppointmentManager
         fields = (
-                  'date_appointment',
+                  'date',
                   'time',
-                  'message',)
-    date_appointment = forms.DateField(
+                  'message')
+        labels = {
+                'message': 'Tell me About you',
+            }
+
+    date = forms.DateField(
         widget=forms.DateInput(
             attrs={
                 'type': 'date'
