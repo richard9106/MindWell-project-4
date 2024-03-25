@@ -12,6 +12,7 @@ class WorkWithUsForm(forms.ModelForm):
         fields = (
             'first_name',
             'last_name',
+            'email',
             'specialization',
             'experience_years',
             'location',
@@ -22,6 +23,7 @@ class WorkWithUsForm(forms.ModelForm):
         labels = {
             'first_name': 'First Name',
             'last_name': 'Lasst Name',
+            'email': 'Email',
             'profile_image': 'Profile Image',
             'experience_years': 'Experience Years',
             'price': 'Your Price',

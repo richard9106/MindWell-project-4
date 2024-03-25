@@ -12,6 +12,7 @@ class Therapists(models.Model):
     TherapistId = models.BigAutoField(primary_key=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=254)
     specialization = models.CharField(max_length=200)
     bio = models.TextField()
     experience_years = models.PositiveIntegerField()
