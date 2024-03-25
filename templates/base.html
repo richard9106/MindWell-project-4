@@ -52,7 +52,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg ">
       <div class="container-fluid  align-items-center">
         <a class="navbar-brand brand-name" href="{% url 'home' %}">
           <img
@@ -60,8 +60,18 @@
             id="logo"
             alt="logo mindwell"
         /></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+          <ul class="navbar-nav nav-underline">
+           
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
@@ -87,32 +97,25 @@
               <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
             {% endif %}
+
           </ul>
-        </div>
-        <div class="logins-links align-items-center">
-          {% if user.is_authenticated %}
-          <div class="d-md-flex ">
-            <span><i class="fa-solid fa-user"></i>{{user}}</span>
-            <span class="mx-3">|</span>
-            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout'%}">Logout</a>
-          </div>  
-          {% else %}
-          <div class="d-md-flex ">
-            <a href="{% url 'account_login' %}" class="btn btn-login" >LogIn</a>
-            <span>|</span>
-            <a href="{% url 'account_signup' %}" class="btn btn-signup">Create an account</a>
+          <div class="logins-links align-items-center">
+            {% if user.is_authenticated %}
+            <div class="d-md-flex ">
+              <span><i class="fa-solid fa-user"></i>{{user}}</span>
+              <span class="mx-3">|</span>
+              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout'%}">Logout</a>
+            </div>  
+            {% else %}
+            <div class="d-md-flex ">
+              <a href="{% url 'account_login' %}" class="btn btn-login" >LogIn</a>
+              <span>|</span>
+              <a href="{% url 'account_signup' %}" class="btn btn-signup">Create an account</a>
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
-          <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
+        
       </div>
     </nav>
 
@@ -122,8 +125,15 @@
     
     {% block services%}
      {% endblock services%}
-    <!-- end index content  -->
+   
 
+    {% block workwithus %}
+    {% endblock workwithus  %}
+
+
+    {% block whyus %}
+    {% endblock whyus %}
+     <!-- end index content  -->
     <!-- Footer -->
     <footer>
       <p>This is the footer</p>
@@ -182,5 +192,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    
   </body>
 </html>

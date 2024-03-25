@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {% block content%}
 {% load static %}
+{% load cloudinary %}
 
 <section class="container-fluid hero-container">
 
@@ -15,7 +16,7 @@
         Affordable online therapy. Start your journey towards finding peace and
         well-being.
       </p>
-      <a href="{% url 'account_signup' %}" class="btn btn-outline-success">Let's Start</a>
+      <a href="{% url 'account_signup' %}" class="btn btn-orange btn-large">Let's Start</a>
     </div>
   </div>
   <!-- hero images  -->
@@ -39,6 +40,7 @@
   </div>
 </section>
 {% endblock %}
+
 {% block services%}
 
 <div class="services-section">
@@ -54,9 +56,7 @@
       
       <h3>Anxiety and Stress</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
-        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
-        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+        Stress is any demand placed on your brain or physical body. Any event or scenario that makes you feel frustrated or nervous can trigger it. Anxiety is a feeling of fear, worry, or unease.
       </p>
     </div>
     <div class="services">
@@ -65,9 +65,7 @@
         </figure>
       <h3>Depression</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
-        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
-        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+        Depression (major depressive disorder) is a common and serious medical illness that negatively affects how you feel, the way you think and how you act. Fortunately, it is also treatable.
       </p>
     </div>
     <div class="services">
@@ -76,9 +74,7 @@
         </figure>
       <h3>Relationships</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore neque
-        incidunt ratione in fugiat excepturi maxime ab animi amet, atque fuga,
-        accusamus nesciunt id facilis enim ducimus repellat quasi. Distinctio?
+        Relationship therapy is based on providing emotional support and creating an accepting atmosphere that fosters personality growth and elicits attitudes and past experiences for examination and analysis during sessions.
       </p>
     </div>
   </div>
@@ -87,9 +83,78 @@
 
 {% block workwithus %}
 <div class="work-with-us-section">
-    <h3>Are you a Therapits??</h3>
+    <h3 class="fs-2">Would you like be part of the family?</h3>
+
+    <p class="text-center mb-5">
+      enjoys being part of a growing family. More than 80% of therapists have found potential clients on our page</p>
+
+    <div class="cont-princ-slider mt-5">
+      <div class="slier-prin">
+        {% for therapist in therapists%}
+        <div class="juegos_DWG">
+          {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" %}
+         
+        </div>
+        {% endfor%}
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="{%url 'work_with_us'%}" class="btn btn-success btn-large  mt-5"> Join to the family</a>
+    </div>
+
 </div>
+
+<script src="{% static  'js/infinity_slider.js' %}"></script>
 {% endblock %}
 
 
+{% block whyus %}
+<div class="feat bg-gray pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class=" col-sm-12">
+        <h3 class="text-center under_line position-relative mb-5">Why Choose Us?</h3>
+        <p class="w-75 mx-auto mb-5 text-center">When you choose us, you'll feel the benefit of 10 years' experience of Web Development. Because we know the digital world and we know that how to handle it. With working knowledge of online, SEO and social media.</p>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
+          <h6>Modern Design</h6>
+          <p>We use latest technology for the latest world because we know the demand of peoples.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item "> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
+          <h6>Creative Design</h6>
+          <p>We are always creative and and always lisen our costomers and we mix these two things and make beast design.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
+          <h6>24 x 7 User Support</h6>
+          <p>If our customer has any problem and any query we are always happy to help then.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
+          <h6>Business Growth</h6>
+          <p>Everyone wants to live on top of the mountain, but all the happiness and growth occurs while you're climbing it</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
+          <h6>Market Strategy</h6>
+          <p>Holding back technology to preserve broken business models is like allowing blacksmiths to veto the internal combustion engine in order to protect their horseshoes.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
+          <h6>Affordable cost</h6>
+          <p>Love is a special word, and I use it only when I mean it. You say the word too much and it becomes cheap.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+{% endblock whyus %}

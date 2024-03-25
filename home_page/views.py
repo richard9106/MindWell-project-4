@@ -1,13 +1,16 @@
 """ view from home page"""
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from therapist.models import Therapists
 from .forms import UserContacForm
 
 
 # Create your views here.
 def index(request):
     """Home page View"""
-    return render(request, 'index.html')
+    therapists = Therapists.objects.all()
+
+    return render(request, 'index.html', {"therapists": therapists})
 
 
 def contact(request):

@@ -116,6 +116,27 @@ ul, li {
 .font-responsive {
   font-size: clamp(16px, 1vw, 36px);
 }
+.btn-orange{
+  background-color: var(--primario);
+}
+.btn-orange:hover{
+  transform: scale(1.1);
+  background-color: var(--secundario);
+  color: white;
+  border: #fa8920 1px solid;
+  transition: all 0.2s;
+}
+.under_line:before{
+  content: "";
+  width: 150px;
+  margin: 5px auto 0;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: var(--primario);
+}
 
 /*responsive utilities*/
 @media (max-width:768px){
