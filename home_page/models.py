@@ -15,7 +15,7 @@ class ContactForm(models.Model):
     """create the model for contact form"""
     name = models.CharField(max_length=50)
     email = models.EmailField()
-    consultation_type = models.IntegerField(choices=consultations_list)
+    consultation_type = models.IntegerField(choices=consultations_list, blank=True)
     message = models.TextField()
 
     def __str__(self):
