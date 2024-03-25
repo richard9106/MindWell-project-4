@@ -3,11 +3,11 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-<div class="container ">
-    <h2 class="text-center my-5 about-title">Contact us</h2>
-    <div class="d-flex justify-content-center">
+<div class="container  ">
+    <h2 class="text-center my-sm-0  my-lg-5 about-title">Contact us</h2>
+    <div class="row flex-c-reverse gap-3" >
     <!-- contact form  -->
-        <div class="work-with-us-form-container">
+        <div class="work-with-us-form-container col ">
             <form method="POST"  class="p-5">
               {% csrf_token%} 
               {{form|crispy }}
@@ -42,7 +42,7 @@
      
 
     <!-- Content Conatac page -->
-      <div class="content-container ms-5">
+      <div class="  mb-md-5 col">
         <div class="mt-5">
         
           <p>

@@ -6,12 +6,14 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from .models import Profile
 from .forms import UserProfileForm
+from therapist.models import AppointmentManager
 
 
 # Create your views here.
 @login_required
 def profile(request):
     """Display Profile page for the Right User"""
+    queryset = AppointmentManager.objects.all()
     profile_model = get_object_or_404(Profile, user=request.user)
     form_profile = UserProfileForm(instance=request.user)
 
@@ -30,7 +32,8 @@ def profile(request):
                 request,
                 messages.WARNING,
                 'Something has gone wrong check your form')
-    return render(request, 'profile.html', {'from_profile': form_profile})
+    return render(request, 'profile.html', {'from_profile': form_profile,
+                                            'appointments': queryset})
 
 
 @login_required

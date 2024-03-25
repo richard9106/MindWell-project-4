@@ -24,9 +24,27 @@
 @media (max-width : 1200px){
     .work-with-us-container{
          flex-direction:column-reverse; 
-        /* flex-wrap: none; */
     }
-    /* .work-with-us-container > div{
-        flex: 0 0  calc(50% - 10px);
-    } */
+    
+}
+@media (max-width :768px){
+    .advices > li{
+        font-size: 1.4rem;
+    }
+}
+@media (max-width :480px){
+    .work-with-us-container{
+        width: 95%;
+    }
+   
+    .advices > li{
+        font-size: 1rem;
+    }
+    .check-icon{
+        font-size: 1rem;
+    }
+    label{
+        font-size: small;
+    }
+   
 }

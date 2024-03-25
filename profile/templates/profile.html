@@ -69,6 +69,22 @@
                 <div class="card-body">
                     <!-- info next apointments  -->
                     <h3 class="apointments-title">My appointments</h3>
+                    {% if appointments %}
+                    <div>
+                      {% for appointments_info in appointments %}
+
+                        {%if appointments_info.client == user %}
+                      <div>
+                        {{appointments_info.date}}
+                        {{appointments_info.therapist}}
+                      </div>
+                      {%endif%}
+                      {%endfor%}
+                    </div>
+                    {% else %}
+                    <p>You don't have any appointments</p>
+                   {{appointments}}
+                    {%endif%}
                 </div>
 
             </div>

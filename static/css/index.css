@@ -12,6 +12,14 @@
 .hero-info {
   display: grid;
   align-content: center;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("../images/fondo1.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top 0 left 0;
 }
 .hero-content-container {
   display: flex;
@@ -50,13 +58,37 @@
   top: 35vh;
 }
 /*Responsive hero section*/
-@media (max-width:1024px){
-  .img-front{
+@media (max-width: 1024px) {
+  .img-front {
     width: 70%;
   }
-  .img-back{
+  .img-back {
     width: 60%;
     /* top:300px; */
+  }
+  .hero-container {
+    display: flex;
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .images-main-container {
+    display: none;
+  }
+  .hero-container {
+    display: block;
+    min-height: 40vh;
+  }
+  .hero-content-container {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../images/img8.png");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: bottom 0 right 0;
   }
 }
 
@@ -105,7 +137,48 @@
 }
 .services > figure > img {
   border-radius: 20px;
+}
 
+/*Responsive services section*/
+
+@media (max-width: 1025px) {
+  .services-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    margin-top: 20px;
+  }
+  .services-section > span,
+  .services-container {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .services-container {
+    margin-top: 25px;
+    padding: 0;
+  }
+  .services {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .services-container {
+    display: block;
+    width: 90%;
+  }
+  .services {
+    margin: 0 auto;
+    min-width: 80%;
+    margin-bottom: 15px;
+  }
+  .services > p {
+    margin: 0 auto;
+    width: 80%;
+  }
 }
 
 /*Work with us section _________________*/

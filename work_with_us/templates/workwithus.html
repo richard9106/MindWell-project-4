@@ -28,7 +28,7 @@
 <div class="containerd  work-with-us-container">
   <!-- form for request to work with us -->
   <div class="work-with-us-form-container">
-    <form method="POST" enctype="multipart/form-data" class="p-5">
+    <form method="POST" enctype="multipart/form-data" class="p-md-5 p-3">
       {% csrf_token%} {{ work_with_us_form|crispy }}
       <button type="submit" class="btn btn-success mt-3">
         Join to the family
@@ -39,7 +39,7 @@
   <!-- info about the procces -->
   <div class="work-with-us-info-container">
     <h3 class="text-center work-with-us-title">How it works</h3>
-    <div class="work-with-us-info p-5">
+    <div class="work-with-us-info p-md-5">
       <p>
         First of all, thank you for considering being part of the MindWell
         family. Our intention is to connect people who need help from a
@@ -51,7 +51,7 @@
       </p>
       <span class="fw-lighter">we will contact you in less than 24 hours</span>
 
-      <ul class="mt-5">
+      <ul class="mt-5 advices">
         <li><span class="check-icon">&check;</span>Fill the form.</li>
         <li>
           <span class="check-icon">&check;</span>Remember a suitable photo can
