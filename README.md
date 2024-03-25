@@ -37,8 +37,8 @@ At MindWell, we understand that the journey to mental well-being can sometimes f
 
 
 ## Surface (colors , images and fonts)
-  * ### fonts from Googlefonts
-      * Press Start 2P
+  * ### fonts
+      * Arial,
       * Sedwick Ave Display
 
 
@@ -50,66 +50,69 @@ At MindWell, we understand that the journey to mental well-being can sometimes f
     * --negro: #000;
     
   * ### images are from.
-    [<span style="color:Orange; font-size:20px;"> Canva](https://www.canva.com/es_es/)
+    - [<span style="color:Orange; font-size:20px;"> Canva](https://www.canva.com/es_es/)
+    -  [<span style="color:Orange; font-size:20px;"> Pexels](hhttps://www.pexels.com/es-es//)
 
-## Features
+## <span style="color:Orange;"> Features 
 
-This game consists of two main features, firstly a game area in which the cards to be matched are found and secondly the points area where you can see the player's defeats and victories
+This website was made to help people to connect with therapist to help them with their mental health, emotional support or relationship issues.Therefore it has the following features:
 
-### Existing Features
+* Navegation bar 
+* Home page about MindWell
+* Signup and login feature
+* Profile page so the user can put info about them and appointments section so they can see, edit and delet theirs next appointments
+* Edit and Delet account 
+* Directory to shearch therapist
+* Therapist profile so the user can see the experience and price of the therapist
+* Schedule appointment
+* Work with us form so if you're a therapist yo can load your profile in MindWell
+* Abot page with the info about MindWell
+* Contact form if you need info or leave feedback
 
-**The Remember mee! Heading and game area**
+## <span style="color:Orange;"> Existing Features
 
-- Featured at the center of the page, the Remember mee! title and the game area is easy to see for the user. The user will be able to see the name of the game and be able to play.
+**Home page - About page - Contact page**
 
-![Game Area](./assets/images/pc2.jpg)
+- Contain all the rellevant information about the website, things like how we work, the issues and possibles solutions, a list of therapist and contact forms.
 
-**The Game Area**
+![Home page and others](./assets/images/pc2.jpg)
 
-- This section will allow the user to play the memory game. The user will be able to easily see cards for 4 seconds and them they have to find each pair possible before the time runs out.
-- The user will be able to give up if they want to.
+**Signup - Login**
 
-<center>
+- The user can create an account or if already have one just logIn.
 
-![timer](./assets/images/countdown.jpg)
 
-</center>
+![LogIn - SingUp](./assets/images/countdown.jpg)
 
-**Countdown and Give up button**
 
-- The user only have 30 seconds to find all pairs for that there is a timer.
-- The user will be able to give up, this is in case the user was not paying attention and didn't see the cards when the game started.
+**User Profile Page**
 
-<center>
+- After the user creates their account he has to complete his personal info.
+- User can add Name, Profession, description, email, location and some profile picture.
+- In this page the user also can see theirs appointments. they can edit or delete them.
+
 
 ![User information](./assets/images/movile5.jpg)
 
-</center>
 
-**Info Game**
+**Therapis directory**
 
-- When the game starts it asks for the player's name so in this section will apear the name.
+- In the page "Look for a Therapist" the user have a full directory with therapist from everywhere. they can click any profile and see the info abou the selected therapist and in the same page make an appointment.
 
-- Also you have a victories and defeats score so you can see how many game you have win or losed.
 
-## Others Features
+## <span style="color:Orange;"> Others Features
 
-**Rules Window**
+**Work with us page**
 
-- When the game starts it asks for the player's name at the same time will show the rules to the user.
+- If you're a therapist you can fil up our work with us form and you profile will be added to our directory 
 
-- The user must put some name to start playing.
-
-<center>
 
 ![User information](./assets/images/rules_11zon.jpg)
 
-</center>
-__You Lose Window__
 
-- When the timer runs out apears the "you lose" window informing the user that they have lost the game and gives the option to start a new one
+**About and contact page**
 
-- The user must put some name to start playing.
+- This pages contain info and contact page of MindWell
 
 <center>
 
@@ -119,11 +122,15 @@ __You Lose Window__
 
 ### Features Left to Implement
 
-- level selector, so you can choose a harder or easier level depending on your ability
+- Calendar so the user can see easely their appointments in a visual calendar
+
+- The therapist can have a profile for them so they can update or delete their inf
+
+- Email or message sistem so he Therapist can contact the clients through the MindWell website 
 
 ---
 
-# Technologies used
+## <span style="color:Orange;"> Technologies used
 
 ### HTML5
 
@@ -135,7 +142,15 @@ __You Lose Window__
 
 ### Java Scrpit
 
-- As a css interactive leng to created the game area, animations and control the score games.
+- As a css interactive language.
+
+### Python - Django
+
+- As a framework and backend 
+
+### PostgredSQL - Elephant SQL
+
+- As a DDBB 
 
 ### Font Awesome
 
@@ -163,7 +178,7 @@ __You Lose Window__
 
 ---
 
-## Testing
+## <span style="color:Orange;">Testing
 
 I used Google Chrome web developer tools and Responsively app for testing and solving problems with responsiveness and style issues.
 
