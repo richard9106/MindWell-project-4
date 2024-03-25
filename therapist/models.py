@@ -16,7 +16,7 @@ class Therapists(models.Model):
     bio = models.TextField()
     experience_years = models.PositiveIntegerField()
     location = models.CharField(max_length=200,  blank=True)
-    profile_image = CloudinaryField('image')
+    profile_image = CloudinaryField('image', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     price = price = models.DecimalField(max_digits=8, decimal_places=2,
                                         default=0.00)
