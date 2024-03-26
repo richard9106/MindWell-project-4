@@ -54,26 +54,23 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid  align-items-center">
-        <a class="navbar-brand brand-name" href="{% url 'home' %}">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
           <img
             src="{% static 'images/logo.png' %}"
             id="logo"
             alt="logo mindwell"
-        /></a>
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav nav-underline">
-           
+        />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
@@ -84,11 +81,7 @@
             <li class="nav-item">
               <a class="nav-link" href=" {% url 'therapists' %}">Look for a therapists</a>
             </li>
-            
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link {% if request.path == work_with_us_url %}active{% endif %}" aria-current="page" href="{% url 'work_with_us' %}">Work with Us</a>
             </li>
@@ -98,26 +91,21 @@
             <li class="nav-item">
               <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
             </li>
-            {% endif %}
           </ul>
-          <div class="logins-links align-items-center">
-            {% if user.is_authenticated %}
-            <div class="d-md-flex ">
+          {% if user.is_authenticated %}
+            <div class="d-flex ">
               <span><i class="fa-solid fa-user"></i>{{user}}</span>
               <span class="mx-3">|</span>
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout'%}">Logout</a>
             </div>  
             {% else %}
-            <div class="d-md-flex ">
+            <div class="d-flex ">
               <a href="{% url 'account_login' %}" class="btn btn-login px-2" >LogIn</a>
               <span style="font-size: 2rem; color:var(--primario)">|</span>
               <a href="{% url 'account_signup' %}" class="btn btn-signup px-2">Create an account</a>
             </div>
             {% endif %}
-          </div>
-         
         </div>
-        
       </div>
     </nav>
 
