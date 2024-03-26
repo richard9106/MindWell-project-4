@@ -70,11 +70,11 @@ def delete_profile(request, user):
 def edit_appointment(request, pk):
     """edit appointment view"""
     appointments = get_object_or_404(AppointmentManager, id=pk)
-    appointments_form = UserAppointmentManager(instance=appointments)
-
+    print(appointments.therapist)
     if request.method == 'POST':
         appointments_form = UserAppointmentManager(request.POST, instance=appointments)
         if appointments_form.is_valid():
+            
             appointments_form.save()
             return HttpResponseRedirect(reverse('profile'))
 
@@ -82,11 +82,11 @@ def edit_appointment(request, pk):
 
 
 @login_required
-def delete_appointment(request, pk, therapist):
+def delete_appointment(request, pk):
     """
     view to delete comment
     """
-    appointments = get_object_or_404(AppointmentManager, id=pk, therapists=therapists)
+    appointments = get_object_or_404(AppointmentManager, id=pk)
 
     if appointments.client == request.user:
         appointments.delete()
