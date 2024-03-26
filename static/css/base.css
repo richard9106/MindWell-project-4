@@ -151,6 +151,16 @@ ul, li {
     flex-direction: column-reverse;
     gap: 15px;
   }
+  table{
+    font-size: 1.2rem;
+  }
+  
+}
+
+@media (max-width:480px){
+  table{
+    font-size: 1rem;
+  }
 }
 
 /*forms styles-___________________*/

@@ -1,3 +1,5 @@
+
+
 # Project 4 Full-Stack Toolkit
 
 # MindWell 
@@ -5,7 +7,7 @@
 At MindWell, we understand that the journey to mental well-being can sometimes feel like a solitary road. That's why we're here to bridge the gap between individuals seeking support and the expert guidance they deserve. Our platform serves as a beacon of hope, connecting you with licensed therapists who can provide the guidance, support, and tools necessary to navigate life's challenges with resilience and clarity.
 
 
-![Responsice Mockup](./assets/images/responsice%20mokup.png)
+![Responsice Mockup](./static/images/readme_images/img-d1.png)
 
 
 - [<span style="color:orange"> External Goals](#external-users-goal)
@@ -53,7 +55,10 @@ At MindWell, we understand that the journey to mental well-being can sometimes f
     - [<span style="color:Orange; font-size:20px;"> Canva](https://www.canva.com/es_es/)
     -  [<span style="color:Orange; font-size:20px;"> Pexels](hhttps://www.pexels.com/es-es//)
 
-## <span style="color:Orange;"> Features 
+<span style="color:Orange;">
+
+##  Features
+</span>
 
 This website was made to help people to connect with therapist to help them with their mental health, emotional support or relationship issues.Therefore it has the following features:
 
@@ -69,8 +74,10 @@ This website was made to help people to connect with therapist to help them with
 * Abot page with the info about MindWell
 * Contact form if you need info or leave feedback
 
-## <span style="color:Orange;"> Existing Features
+<span style="color:Orange;"> 
 
+## Existing Features
+</span>
 **Home page - About page - Contact page**
 
 - Contain all the rellevant information about the website, things like how we work, the issues and possibles solutions, a list of therapist and contact forms.
@@ -99,8 +106,10 @@ This website was made to help people to connect with therapist to help them with
 
 - In the page "Look for a Therapist" the user have a full directory with therapist from everywhere. they can click any profile and see the info abou the selected therapist and in the same page make an appointment.
 
+<span style="color:Orange;"> 
 
-## <span style="color:Orange;"> Others Features
+## Others Features
+</span>
 
 **Work with us page**
 
@@ -129,9 +138,10 @@ This website was made to help people to connect with therapist to help them with
 - Email or message sistem so he Therapist can contact the clients through the MindWell website 
 
 ---
+<span style="color:Orange;"> 
 
-## <span style="color:Orange;"> Technologies used
-
+## Technologies used
+</span>
 ### HTML5
 
 - As a structure language.
@@ -177,9 +187,10 @@ This website was made to help people to connect with therapist to help them with
 - As an image editor.
 
 ---
+<span style="color:Orange;"> 
 
-## <span style="color:Orange;">Testing
-
+## Testing
+</span>
 I used Google Chrome web developer tools and Responsively app for testing and solving problems with responsiveness and style issues.
 
 [<span style="color:orange">Responsively App](https://responsively.app/) was very helpful the diferent screen sizes are listed below:
@@ -200,7 +211,10 @@ I used Google Chrome web developer tools and Responsively app for testing and so
 - Nest Hub (1024px - 600px)
 - Macbook Pro (1440px - 900px)
 
+<span style="color:Orange;"> 
+
 ## Performance testing
+</span>
 
 I run [<span style="color:orange">Lighthouse](https://developers.google.com/web/tools/lighthouse/) tool to check performance of the website.
 I had to do couple of changes to improve performance. Screenshots are presented below:
@@ -239,8 +253,10 @@ I noticed that this tests scores vary from time to time and depends on external 
 
 * If you lose the game and there is a card left, in the next game count that card as turned.
 
-# Deployment
+<span style="color:Orange;"> 
 
+# Deployment
+</span>
 The project was deployed on GitHub Pages. I used VsCode as a development environment where I commited all changes to git version control system.
 I used push command in VsCode save changes into GitHub.
 
@@ -261,8 +277,10 @@ To run localy:
 
 * once it has been created you can open it with VScode directly from your virtual space.
 
+<span style="color:Orange;"> 
 
 ## Credits
+</span>
 
 * To complete this project I used Code Institute student template: [<span style="color:orange">gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
@@ -280,15 +298,17 @@ https://codepen.io/Sakilmurad/pen/GRNrvqX
 
 ### Content
 
-- The rules were created based on a Google search [<span style="color:orange">memory game](https://www.google.com/search?q=memori+game+rules&sca_esv=564283140&sxsrf=AB5stBi7PJto-HcDdMO8q6vetbliEWWQPg%3A1694420047145&source=hp&ei=T8z-ZPHJBqCKkdUP9cmX-AI&iflsig=AD69kcEAAAAAZP7aX-h1ESVfbJ8kWK7u7gAfDm3kbaCl&ved=0ahUKEwixrYjIjqKBAxUgRaQEHfXkBS8Q4dUDCAs&uact=5&oq=memori+game+rules&gs_lp=Egdnd3Mtd2l6IhFtZW1vcmkgZ2FtZSBydWxlczIHEAAYDRiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjjIlDlCFj0IHABeACQAQCYAYABoAGuDqoBBDQuMTO4AQPIAQD4AQGoAgvCAgYQswEYhQTCAhAQLhgDGI8BGOUCGOoCGIwDwgIQEAAYAxiPARjlAhjqAhiMA8ICCxAAGIAEGLEDGIMBwgILEC4YigUYsQMYgwHCAgsQLhiABBixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIIEAAYgAQYsQPCAg4QLhiABBixAxjHARjRA8ICCxAAGIoFGLEDGIMBwgIIEC4YgAQYsQPCAgUQABiABMICCxAuGIAEGMcBGK8BwgIFEC4YgATCAgsQLhiDARixAxiABMICDRAuGK8BGMcBGIAEGArCAg0QLhiABBjHARivARgKwgILEC4YgwEYsQMYigXCAg0QLhiABBixAxiDARgKwgIHEAAYgAQYCsICBxAuGIAEGArCAgcQLhgNGIAEwgIIEAAYFhgeGA_CAggQABgFGB4YDcICChAAGAUYHhgNGA8&sclient=gws-wiz)
+-
 
 ### Media
 
 - The photos used on the home and sign up page are from This Open Source site
 - The images used for the gallery page were taken from this other open source site
 
+<span style="color:Orange;"> 
 
 # Screenshots
+</span>
 
 ## Project screenshots
 
