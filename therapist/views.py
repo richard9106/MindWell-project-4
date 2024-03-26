@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .models import Therapists
+from .models import Therapists, AppointmentManager
 from .forms import UserAppointmentManager
 
 

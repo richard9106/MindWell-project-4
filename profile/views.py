@@ -1,12 +1,14 @@
 """ view when the user is Auth."""
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth import logout
+from django.http import HttpResponseRedirect
+from therapist.models import AppointmentManager, Therapists
+from therapist.forms import UserAppointmentManager
 from .models import Profile
 from .forms import UserProfileForm
-from therapist.models import AppointmentManager ,Therapists
+
 
 
 # Create your views here.
@@ -19,7 +21,9 @@ def profile(request):
     form_profile = UserProfileForm(instance=request.user)
 
     if request.method == 'POST':
-        form_profile = UserProfileForm(request.POST, request.FILES, instance=profile_model)
+        form_profile = UserProfileForm(request.POST,
+                                       request.FILES,
+                                       instance=profile_model)
         if form_profile.is_valid():
             profile_model.completed_info = True
             form_profile.save()
@@ -33,9 +37,11 @@ def profile(request):
                 request,
                 messages.WARNING,
                 'Something has gone wrong check your form')
-    return render(request, 'profile.html', {'from_profile': form_profile,
-                                            'therapists': therapists,
-                                            'appointments': queryset})
+    return render(request, 'profile.html',
+                  {'from_profile': form_profile,
+                   'therapists': therapists,
+                   'appointment_form': UserAppointmentManager,
+                   'appointments': queryset})
 
 
 @login_required
@@ -61,6 +67,31 @@ def delete_profile(request, user):
 
 
 @login_required
-def my_appointments(request):
-    """appointments view"""
-    return render(request, 'my_appointments.html')
+def edit_appointment(request, pk):
+    """edit appointment view"""
+    appointments = get_object_or_404(AppointmentManager, id=pk)
+    appointments_form = UserAppointmentManager(instance=appointments)
+
+    if request.method == 'POST':
+        appointments_form = UserAppointmentManager(request.POST, instance=appointments)
+        if appointments_form.is_valid():
+            appointments_form.save()
+            return HttpResponseRedirect(reverse('profile'))
+
+    return HttpResponseRedirect(reverse('profile'))
+
+
+@login_required
+def delete_appointment(request, pk, therapist):
+    """
+    view to delete comment
+    """
+    appointments = get_object_or_404(AppointmentManager, id=pk, therapists=therapists)
+
+    if appointments.client == request.user:
+        appointments.delete()
+        messages.add_message(request, messages.SUCCESS, 'Appointment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'Something has gone wrong!')
+
+    return HttpResponseRedirect(reverse('profile'))

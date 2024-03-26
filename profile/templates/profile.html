@@ -93,7 +93,7 @@
             <tbody>
               {% for appointments_info in appointments %} 
               {%if appointments_info.client == user %}
-              <tr>
+              <tr ">
                 <th scope="row"> 
                   <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" %}
                   </a>
@@ -102,10 +102,37 @@
                 <td>{{appointments_info.date}}</td>
                 <td>{{appointments_info.time}}</td>
                 <td>
-                  <a href=""><i class="fa-regular fa-pen-to-square me-3 text-secundario"></i></a>
-                  <a href=""><i class="fa-solid fa-trash text-primario"></i></a>
+                  <a href="" appointment_id="{{appointments_info.pk}}" data-bs-toggle="modal" data-bs-target="#makeappointment" ><i class="fa-regular fa-pen-to-square me-3 text-secundario"></i></a>
+                  <a href="{% url 'delete_appointment' appointments_info.pk %}"><i class="fa-solid fa-trash text-primario"></i></a>
                 </td>
               </tr>
+
+              <!--eddit appointment modal-->
+              <div class="modal" tabindex="-1" id="makeappointment">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-primario">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div>
+                      <h3 class="modal-title text-center text-primario">Make an appointment</h3>
+                    </div>
+                    <form method="POST" enctype="multipart/form-data" action="{% url 'edit_appointment' appointments_info.pk %}">
+                    <div class="modal-body p-5">
+                      {% csrf_token%} 
+                      {{appointment_form|crispy }}
+                      </div>
+                      <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" id="eddit_appointment" class="btn btn-success">Save</button>
+                      </div>
+                    </form>
+                    </div>
+                  
+                  </div>
+                </div>
+
+
               {%endif%} 
             {%endfor%}
             </tbody>
@@ -130,10 +157,7 @@
 >
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title fs-5 text-center" id="eddit-profileLabel">
-          My Profile
-        </h3>
+      <div class="modal-header bg-primario">
         <button
           type="button"
           class="btn-close"
@@ -142,6 +166,9 @@
         ></button>
       </div>
       <div>
+        <h3 class="modal-title fs-2 text-center" id="eddit-profileLabel">
+          My Profile
+        </h3>
         <p class="text-center fw-lighter mb-0 mt-3">
           Please complete your personal information
         </p>
@@ -179,7 +206,7 @@
   
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-primario">
         <h3 class="modal-title fs-5" id="deleteaccountLabel"></h3>
         <button
           type="button"
@@ -205,6 +232,11 @@
     </div>
   </div>
 </div>
+
+
+</div>
+
+
 {% if not user.profile.completed_info%}
 <script>
   $(document).ready(function () {

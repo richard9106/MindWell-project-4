@@ -122,7 +122,7 @@ ul, li {
 .font-responsive {
   font-size: clamp(16px, 1vw, 36px);
 }
-.btn-orange{
+.btn-orange, .bg-primario{
   background-color: var(--primario);
 }
 .btn-orange:hover{
