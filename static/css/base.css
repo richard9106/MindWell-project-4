@@ -103,6 +103,12 @@ ul, li {
 }
 
 /*Utilities_______________________*/
+.text-primario{
+  color: var(--primario);
+}
+.text-secundario{
+  color: var(--secundario);
+}
 .check-icon {
   color: #1c532c;
   font-size: 2rem;
@@ -178,7 +184,7 @@ form input[type="checkbox"] {
 .login-title,
 .login-slug {
   color: var(--secundario);
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .logins-links {
   display: flex;
@@ -199,9 +205,9 @@ form input[type="checkbox"] {
 .divider-or::before {
   content: "or";
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 50%;
-  background-color: #fff;
+  background-color: #D3D3D3;
 }
 .nav-link.active{
   color: var(--primario)!important;

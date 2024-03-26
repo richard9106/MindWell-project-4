@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %} 
 {% load crispy_forms_tags %}
+{% load cloudinary %}
 
 <!-- displaying Django messages -->
 <div class="container">
@@ -27,127 +26,193 @@
   </div>
 </div>
 
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            <!-- Info Profile  -->
-            <div class="card border round-2 shadow p-5 mb-3">
-                <div class="card-body">
-                  <div class="">
-                        <img class="img-thumbali rounded-circle mb-5 image-profile"  src="{{user.profile.image.url}} " alt="{{user.username}}">
-                  </div>
-                    <h2 class="text-center profile-name">{{user.profile.first_name}} {{user.last_name}}</h2>
-                    <p class="text-center "><strong> {{user.profile.profession }}</strong></p>
-                    <hr>
-                    <p>Email:<strong> {{user.profile.email }}</strong></p>
-                    <p>Location:<strong> {{user.profile.location }}</strong></p>
-                    <p>About Me:</p>
-                    <p class="text-justify">
-                      {{user.profile.description}} 
-                    </p>
-                    
-                </div>
-
-                <div class="d-flex justify-content-between my-3">
-                    <button id=editProfileButton type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eddit-profile">
-                        Eddit my profile
-                      </button>
-                    <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteaccount">
-                        Delete my account
-                      </button>
-                </div>
-                
-            </div>
-        </div>
-        <div class="col-lg-8">
-           
-            <div class="card border round-2 shadow p-3 mb-3">
-                <div class="card-body">
-                    <!-- info next apointments  -->
-                    <h3 class="apointments-title">My appointments</h3>
-                    {% if appointments %}
-                    <div>
-                      {% for appointments_info in appointments %}
-
-                        {%if appointments_info.client == user %}
-                      <div>
-                        {{appointments_info.date}}
-                        {{appointments_info.therapist}}
-                      </div>
-                      {%endif%}
-                      {%endfor%}
-                    </div>
-                    {% else %}
-                    <p>You don't have any appointments</p>
-                   {{appointments}}
-                    {%endif%}
-                </div>
-
-            </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <!-- Info Profile  -->
+      <div class="card border round-2 shadow p-5 mb-3">
+        <div class="card-body">
+          <div class="mx-auto text-center">
+            <img
+              class="img-thumbali rounded-circle mb-5 image-profile"
+              src="{{user.profile.image.url}} "
+              alt="{{user.username}}"
+            />
+          </div>
+          <h2 class="text-center profile-name">
+            {{user.profile.first_name}} {{user.last_name}}
+          </h2>
+          <p class="text-center">
+            <strong> {{user.profile.profession }}</strong>
+          </p>
+          <hr />
+          <p>Email:<strong> {{user.profile.email }}</strong></p>
+          <p>Location:<strong> {{user.profile.location }}</strong></p>
+          <p>About Me:</p>
+          <p class="text-justify">{{user.profile.description}}</p>
         </div>
 
+        <div class="d-flex justify-content-between my-3">
+          <button
+            id="editProfileButton"
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#eddit-profile"
+          >
+            Eddit my profile
+          </button>
+          <button
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteaccount"
+          >
+            Delete my account
+          </button>
+        </div>
+      </div>
     </div>
+    <!-- Appoinments -->
+    <div class="col-lg-8">
+      <div class="card border round-2 shadow p-3 mb-3">
+        <div class="card-body">
+          <!-- info next apointments  -->
+          <h3 class="apointments-title mb-5 text-center">My appointments</h3>
+          {% if appointments %}
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Who</th>
+                <th scope="col">When</th>
+                <th scope="col">Time</th>
+                <th scope="col">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for appointments_info in appointments %} 
+              {%if appointments_info.client == user %}
+              <tr>
+                <th scope="row"> 
+                  <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" %}
+                  </a>
+                </th>
+                <td>{{appointments_info.therapist}}</td>
+                <td>{{appointments_info.date}}</td>
+                <td>{{appointments_info.time}}</td>
+                <td>
+                  <a href=""><i class="fa-regular fa-pen-to-square me-3 text-secundario"></i></a>
+                  <a href=""><i class="fa-solid fa-trash text-primario"></i></a>
+                </td>
+              </tr>
+              {%endif%} 
+            {%endfor%}
+            </tbody>
+          </table>
+          {% else %}
+          <p>You don't have any appointments</p>
+          {{appointments}} 
+          {%endif%}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- modal form to edit profile  -->
-<div class="modal fade" id="eddit-profile" tabindex="-1" aria-labelledby="eddit-profilelLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title fs-5 text-center" id="eddit-profileLabel">My Profile</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div>
-          <p class="text-center fw-lighter mb-0 mt-3">Please complete your personal information</p>
-        </div>
-        <form action="{% url 'profile' %}" enctype="multipart/form-data" method="POST">
-            {% csrf_token %}
-            <div class="modal-body p-5">
-            <!-- from to edit profile  -->
-            {{from_profile|crispy}}
-            
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-success">Save changes</button>
-            </div>
-        </form>
+<div
+  class="modal fade"
+  id="eddit-profile"
+  tabindex="-1"
+  aria-labelledby="eddit-profilelLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-5 text-center" id="eddit-profileLabel">
+          My Profile
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
-    </div>
-  </div>
-
-  <!-- Delete account confirmation  -->
-  <div class="modal fade" id="deleteaccount" tabindex="-1" aria-labelledby="deleteaccountLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title fs-5" id="deleteaccountLabel"></h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Are you sure you want to delete your account?
-            We will not save your data and it will be deleted immediately.<strong >This process cannot be undone.</strong></p> 
+      <div>
+        <p class="text-center fw-lighter mb-0 mt-3">
+          Please complete your personal information
+        </p>
+      </div>
+      <form
+        action="{% url 'profile' %}"
+        enctype="multipart/form-data"
+        method="POST">
+        {% csrf_token %}
+        <div class="modal-body p-5">
+          <!-- from to edit profile  -->
+          {{from_profile|crispy}}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
-          <a href="{% url 'delete_profile' %}" class="btn btn-danger text-white">Delete my account</a>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-success">Save changes</button>
         </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Delete account confirmation  -->
+<div
+  class="modal fade"
+  id="deleteaccount"
+  tabindex="-1"
+  aria-labelledby="deleteaccountLabel"
+  aria-hidden="true">
+  
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-5" id="deleteaccountLabel"></h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure you want to delete your account? We will not save your
+          data and it will be deleted immediately.<strong>This process cannot be undone.</strong>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <a href="{% url 'delete_profile' %}" class="btn btn-danger text-white"
+          >Delete my account</a
+        >
       </div>
     </div>
   </div>
+</div>
 {% if not user.profile.completed_info%}
 <script>
-  $(document).ready(function() {
-    let currentUrl = location.pathname
+  $(document).ready(function () {
+    let currentUrl = location.pathname;
     if (currentUrl == "/profile/")
-        setTimeout(function(){
-        $("#eddit-profile").modal('show');
-    }, 1000)
-});
+      setTimeout(function () {
+        $("#eddit-profile").modal("show");
+      }, 1000);
+  });
 </script>
-{%endif%}
-
-{% endblock content%}
-
+{%endif%} {% endblock content%}

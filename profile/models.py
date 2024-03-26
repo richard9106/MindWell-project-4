@@ -5,6 +5,7 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User
 
 
+
 # User profile.
 class Profile(models.Model):
     """model user information"""

@@ -1,11 +1,11 @@
 """ Therapist Views"""
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Therapists
 from .forms import UserAppointmentManager
-
 
 
 # Create your views here.
@@ -37,6 +37,7 @@ def therapist_profile(request, first_name):
                 request,
                 messages.SUCCESS,
                 "Your appointment was successfully register")
+            return HttpResponseRedirect(reverse('profile'))
         else:
             messages.add_message(
                 request,
