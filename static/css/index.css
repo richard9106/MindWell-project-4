@@ -288,3 +288,8 @@
 .item:hover > .icon{
   color: var(--secundario);
 }
+
+.item > h6{
+  font-size: 1.4rem;
+  color: var(--secundario);
+}
