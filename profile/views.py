@@ -10,7 +10,6 @@ from .models import Profile
 from .forms import UserProfileForm
 
 
-
 # Create your views here.
 @login_required
 def profile(request):
@@ -48,7 +47,6 @@ def profile(request):
 def delete_profile(request, user):
     """ Deletes the user's account and logs them out."""
     profile_model = get_object_or_404(Profile, user=request.user)
-    
     if request.user:
         profile_model.delete()
         user.delete()
@@ -72,9 +70,9 @@ def edit_appointment(request, pk):
     appointments = get_object_or_404(AppointmentManager, id=pk)
     print(appointments.therapist)
     if request.method == 'POST':
-        appointments_form = UserAppointmentManager(request.POST, instance=appointments)
+        appointments_form = UserAppointmentManager(request.POST,
+                                                   instance=appointments)
         if appointments_form.is_valid():
-            
             appointments_form.save()
             return HttpResponseRedirect(reverse('profile'))
 
@@ -92,6 +90,6 @@ def delete_appointment(request, pk):
         appointments.delete()
         messages.add_message(request, messages.SUCCESS, 'Appointment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'Something has gone wrong!')
-
+        messages.add_message(request, messages.ERROR,
+                             'Something has gone wrong!')
     return HttpResponseRedirect(reverse('profile'))

@@ -1,3 +1,4 @@
+"""Test for form user profile info"""
 from django.test import TestCase
 from .forms import UserProfileForm
 

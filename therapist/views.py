@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .models import Therapists, AppointmentManager
+from .models import Therapists
 from .forms import UserAppointmentManager
 
 
@@ -13,7 +13,7 @@ from .forms import UserAppointmentManager
 def therapilist(request):
     """View for list therapists"""
     therapists = Therapists.objects.all()
-    
+
     return render(request, "therapist_list.html",
                   {'therapists': therapists})
 
@@ -50,4 +50,3 @@ def therapist_profile(request, first_name):
         {"therapist": therapist,
          "appointment_form": UserAppointmentManager}
     )
-
