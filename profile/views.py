@@ -15,7 +15,7 @@ from .forms import UserProfileForm
 @login_required
 def profile(request):
     """Display Profile page for the Right User"""
-    queryset = AppointmentManager.objects.all()
+    appointments = AppointmentManager.objects.all().filter(client=request.user)
     therapists = Therapists.objects.all()
     profile_model = get_object_or_404(Profile, user=request.user)
     form_profile = UserProfileForm(instance=request.user)
@@ -41,7 +41,7 @@ def profile(request):
                   {'from_profile': form_profile,
                    'therapists': therapists,
                    'appointment_form': UserAppointmentManager,
-                   'appointments': queryset})
+                   'appointments': appointments})
 
 
 @login_required

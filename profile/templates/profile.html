@@ -79,7 +79,8 @@
         <div class="card-body">
           <!-- info next apointments  -->
           <h3 class="apointments-title mb-5 text-center">My appointments</h3>
-          {% if appointments %}
+         
+          
 
           <table class="table">
             <thead>
@@ -92,8 +93,8 @@
               </tr>
             </thead>
             <tbody>
+              {%if appointments%}
               {% for appointments_info in appointments %} 
-              {%if appointments_info.client == user %}
               <tr ">
                 <th scope="row"> 
                   <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" %}
@@ -132,14 +133,17 @@
                   
                   </div>
                 </div>
-              {%endif%} 
             {%endfor%}
+            {%else%}
+            <p>You don't have any appointment</p>
+             
+            {%endif%}
             </tbody>
           </table>
-          {% else %}
-          <p>You don't have any appointments</p>
-          {{appointments}} 
-          {%endif%}
+         
+         
+       
+        
         </div>
       </div>
     </div>
