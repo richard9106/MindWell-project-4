@@ -7,7 +7,6 @@
 }
 
 html {
-  
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -26,7 +25,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
 }
-h1,h2,h3{
+h1,
+h2,
+h3 {
   font-size: 3rem;
 }
 
@@ -79,34 +80,35 @@ figure {
   padding: 0;
 }
 
-ul, li {
-  padding:0;
+ul,
+li {
+  padding: 0;
   list-style: none;
 }
 
 /*end globals-___________________*/
 
 /*respnsives Globals*/
-@media (max-width:1024px){
-  h1{
+@media (max-width: 1024px) {
+  h1 {
     font-size: 2rem;
   }
-
 }
-@media (max-width:768px){
-  h1{
+@media (max-width: 768px) {
+  h1 {
     font-size: 2rem;
   }
-  h2, h3{
+  h2,
+  h3 {
     font-size: 2rem;
   }
 }
 
 /*Utilities_______________________*/
-.text-primario{
+.text-primario {
   color: var(--primario);
 }
-.text-secundario{
+.text-secundario {
   color: var(--secundario);
 }
 .check-icon {
@@ -122,17 +124,18 @@ ul, li {
 .font-responsive {
   font-size: clamp(16px, 1vw, 36px);
 }
-.btn-orange, .bg-primario{
+.btn-orange,
+.bg-primario {
   background-color: var(--primario);
 }
-.btn-orange:hover{
+.btn-orange:hover {
   transform: scale(1.1);
   background-color: var(--secundario);
   color: white;
   border: #fa8920 1px solid;
   transition: all 0.2s;
 }
-.under_line:before{
+.under_line:before {
   content: "";
   width: 150px;
   margin: 5px auto 0;
@@ -145,20 +148,19 @@ ul, li {
 }
 
 /*responsive utilities*/
-@media (max-width:768px){
-  div.flex-c-reverse{
+@media (max-width: 768px) {
+  div.flex-c-reverse {
     display: flex !important;
     flex-direction: column-reverse;
     gap: 15px;
   }
-  table{
+  table {
     font-size: 1.2rem;
   }
-  
 }
 
-@media (max-width:480px){
-  table{
+@media (max-width: 480px) {
+  table {
     font-size: 1rem;
   }
 }
@@ -173,7 +175,7 @@ form input[type="checkbox"] {
 }
 
 /*Nab*/
-#navbarNav{
+#navbarNav {
   display: flex;
   justify-content: space-between;
 }
@@ -217,10 +219,10 @@ form input[type="checkbox"] {
   position: absolute;
   top: 25px;
   left: 50%;
-  background-color: #D3D3D3;
+  background-color: #d3d3d3;
 }
-.nav-link.active{
-  color: var(--primario)!important;
+.nav-link.active {
+  color: var(--primario) !important;
 }
 button {
   font-size: 1.2rem !important;
@@ -230,10 +232,9 @@ button {
   color: black;
 }
 
-@media (max-width:991px){
-  #navbarNav{
+@media (max-width: 991px) {
+  #navbarNav {
     display: block;
-    
   }
 }
 
@@ -249,7 +250,7 @@ button {
   }
 }
 
-footer{
+footer {
   position: absolute;
   width: 100%;
   background-color: hsl(29, 96%, 55%);

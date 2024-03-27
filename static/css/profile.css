@@ -39,7 +39,6 @@ img.image-profile {
   background-color: var(--primario);
 }
 .image-container img:hover {
-  scale: 1.1;
   object-fit: cover;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -64,6 +63,3 @@ img.image-profile {
   min-width: 40%;
   min-height: auto;
 }
-/* .fc-view-harness{
-    min-height: 700px
-} */
