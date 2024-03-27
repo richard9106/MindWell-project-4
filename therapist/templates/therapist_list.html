@@ -17,7 +17,7 @@
                             <div class="image-container">
                                 {% if therapist.profile_image.url %}
                                 <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
-                                {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" %}
+                                {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" alt="Therapist photo" %}
                                 </a>
                                 {% else %}
                                 <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
