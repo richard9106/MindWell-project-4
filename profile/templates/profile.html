@@ -35,6 +35,7 @@
         <div class="card-body">
           <div class="mx-auto text-center">
             <img
+              loading="lazy"
               class="img-thumbali rounded-circle mb-5 image-profile"
               src="{{user.profile.image.url}} "
               alt="{{user.username}}"
@@ -95,7 +96,7 @@
               {% for appointments_info in appointments %} 
               <tr ">
                 <th scope="row"> 
-                  <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" %}
+                  <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" loading="lazy"%}
                   </a>
                 </th>
                 <td>{{appointments_info.therapist}}</td>
