@@ -1,0 +1,259 @@
+:root {
+  --primario: #fa8920;
+  --primario-claro: rgba(250, 137, 32, 0.5);
+  --secundario: #1c532c;
+  --blanco: #fff;
+  --negro: #000;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/** Globals _________________**/
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--secundario);
+}
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+a {
+  text-decoration: none !important;
+  color: #000;
+  font-size: 1.6rem;
+}
+
+a.nav-link:hover,
+a.active {
+  color: #fa8920;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a.brand-name {
+  font-size: 1.6rem;
+}
+#logo {
+  width: 100px;
+}
+
+a.btn-login,
+a.btn-signup {
+  font-size: 1.6rem;
+}
+.btn-outline-success:hover {
+  background-color: var(--primario);
+  width: 200px;
+}
+.btn-outline-success,
+.btn-large {
+  width: 200px;
+  padding: 10px;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  list-style: none;
+}
+
+/*end globals-___________________*/
+
+/*respnsives Globals*/
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2,
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/*Utilities_______________________*/
+.text-primario {
+  color: var(--primario);
+}
+.text-secundario {
+  color: var(--secundario);
+}
+.check-icon {
+  color: #1c532c;
+  font-size: 2rem;
+  margin-right: 15px;
+}
+.subtitles {
+  position: relative;
+  font-size: 2rem;
+  color: var(--primario);
+}
+.font-responsive {
+  font-size: clamp(16px, 1vw, 36px);
+}
+.btn-orange,
+.bg-primario {
+  background-color: var(--primario);
+}
+.btn-orange:hover {
+  transform: scale(1.1);
+  background-color: var(--secundario);
+  color: white;
+  border: #fa8920 1px solid;
+  transition: all 0.2s;
+}
+.under_line:before {
+  content: "";
+  width: 150px;
+  margin: 5px auto 0;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: var(--primario);
+}
+
+/*responsive utilities*/
+@media (max-width: 768px) {
+  div.flex-c-reverse {
+    display: flex !important;
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  table {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 1rem;
+  }
+}
+
+/*forms styles-___________________*/
+form input {
+  min-height: 30px;
+  font-size: 1.5rem !important;
+}
+form input[type="checkbox"] {
+  min-height: auto;
+}
+
+/*Nab*/
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
+}
+.login-main-container {
+  max-width: 600px;
+  padding: 40px;
+  /* From https://css.glass */
+  background: rgba(30, 30, 30, 0.195);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  border: 1px solid rgba(30, 30, 30, 0.3);
+}
+.card-login {
+  border-radius: 20px;
+  box-shadow: 0px 12px 20px -5px #5f564e;
+}
+.login-title,
+.login-slug {
+  color: var(--secundario);
+  font-size: 2rem;
+}
+.logins-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.login-button {
+  width: 100%;
+}
+.login-button:hover {
+  background-color: var(--primario);
+  color: #1c532c;
+}
+.divider-container {
+  position: relative;
+}
+.divider-or::before {
+  content: "or";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  background-color: #d3d3d3;
+}
+.nav-link.active {
+  color: var(--primario) !important;
+}
+button {
+  font-size: 1.2rem !important;
+}
+.btn-success:hover {
+  background-color: var(--primario) !important;
+  color: black;
+}
+
+@media (max-width: 991px) {
+  #navbarNav {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-main-container {
+    max-width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card-login {
+    border-radius: 20px;
+    box-shadow: 0px 12px 20px -10px #fa8920;
+  }
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: hsl(29, 96%, 55%);
+  bottom: 0;
+  z-index: 10;
+}

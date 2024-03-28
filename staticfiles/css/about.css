@@ -1,0 +1,38 @@
+.about-container {
+    gap:50px;
+}
+
+.d-flex > div{
+    flex: 0 0 calc(50%);
+}
+.about-title{
+    color: var(--secundario)  ;
+}
+.about-image{
+    height: 30vw;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    object-position: 20% 80%;
+}
+.image-about-contianer-mobile{
+    display: none;
+}
+
+@media (max-width:990px){
+    .image-about-contianer{
+        display: none;
+    }
+    .image-about-contianer-mobile{
+        display: block;
+    }
+    .about-image-mobile{
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    .container{
+        min-width: 80%;
+    }
+    .d-flex {
+        display: block!important;
+    }
+}

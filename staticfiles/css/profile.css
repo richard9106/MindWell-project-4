@@ -1,0 +1,65 @@
+/*USER PROFILE*/
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+img.image-profile {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 250px;
+  object-fit: cover;
+}
+.img-profile-container {
+  margin: 0 auto;
+  text-align: center;
+}
+.profile-name,
+.apointments-title {
+  font-size: 1.6rem !important;
+}
+.author {
+  position: relative;
+  font-weight: 600;
+  color: var(--secundario);
+}
+.author:before {
+  content: "";
+  width: 150px;
+  margin: 0px auto 0;
+  height: 2px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background-color: var(--primario);
+}
+.image-container img:hover {
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.image-container {
+  overflow: hidden;
+}
+
+/*THERAPIST PROFILE*/
+.therapist-name {
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+.therapist-spc {
+  font-size: smaller;
+  color: var(--secundario);
+}
+
+.modal-dialog {
+  top: 10px;
+  min-width: 40%;
+  min-height: auto;
+}
