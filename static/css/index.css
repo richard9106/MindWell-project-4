@@ -4,14 +4,14 @@
 .hero-container {
   display: flex;
   min-height: 90vh;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
-    ),
-    url("../images/fondo1.png");
-  background-repeat: no-repeat;
-  background-size: 600px;
-  background-position: top 0 left 0;
+  background-repeat: no-repeat; 
+  background-image:linear-gradient(
+    rgba(255, 255, 255, 0.541),
+    rgba(255, 255, 255, 0.5)
+  ), url("/static/images/fondo1.png");
+  background-size: contain;
+  background-clip: padding-box;
+  
 }
 
 .hero-container > div {
@@ -100,9 +100,10 @@
   }
   .hero-content-container > p {
     margin-bottom: 10px;
+    padding: 5px;
     color: var(--secundario);
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(250, 137, 32, 0.3);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
