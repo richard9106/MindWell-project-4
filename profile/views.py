@@ -19,6 +19,7 @@ def profile(request):
     profile_model = get_object_or_404(Profile, user=request.user)
     form_profile = UserProfileForm(instance=request.user)
 
+
     if request.method == 'POST':
         form_profile = UserProfileForm(request.POST,
                                        request.FILES,

@@ -16,7 +16,7 @@ class UserProfileForm(forms.ModelForm):
             labels
             """
             super().__init__(*args, **kwargs)
-            placeholders = {
+            placeholder = {
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'location': 'Location',
@@ -34,12 +34,14 @@ class UserProfileForm(forms.ModelForm):
                 'description': 'Description'
             }
 
+            
+
             for field in self.fields:
-                if field in placeholders:
+                if field in placeholder:
                     if self.fields[field].required:
-                        placeholder = f'{placeholders[field]} *'
+                        placeholder = f'{placeholder[field]} *'
                     else:
-                        placeholder = placeholders[field]
+                        placeholder = placeholder[field]
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                 if field in labels:
                     self.fields[field].label = labels[field]

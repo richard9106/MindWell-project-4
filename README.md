@@ -197,14 +197,13 @@ I used Google Chrome web developer tools and Responsively app for testing and so
 
 ### Cell phones
 
-- Nokia Lumia 520 (320px - 533px)
+- Galaxy S5 (360 - 640)
 - Nokia N9 (480px - 854px)
-- Samsung Galaxy S20 (412px - 915px)
-- Iphone 12 Pro (390px - 844px)
 
 ### Tablets
 
 - Ipad (768px - 1024px)
+- Ipad Pro (1024 -1366)
 
 ### Desck top
 
@@ -219,39 +218,35 @@ I used Google Chrome web developer tools and Responsively app for testing and so
 I run [<span style="color:orange">Lighthouse](https://developers.google.com/web/tools/lighthouse/) tool to check performance of the website.
 I had to do couple of changes to improve performance. Screenshots are presented below:
 
-![bug_performance1](./assets/images/preformance.jpg)
+![bug_performance1](./static/images/readme_images/lighthouse2.png)
 
-### __Final results:__
 
-![performance_final](./assets/images/preformance2.jpg)
+I noticed that the scores of these tests change from time to time and also depend on external libraries.
 
-I noticed that this tests scores vary from time to time and depends on external libraries as well. 
+I had some issues with bootstrap cdn loading time and some background images in the css, they are compressed but it's not improving the performance
 
 ### Validator Testing
 
 - HTML
-  - No errors were returned when passing through the official [<span style="color:orange">W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frichard9106.github.io%2Fremember-me-javaScript-essentials%2F)
+  - No errors were returned when passing through the official [<span style="color:orange">W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmindwellproject4-c451517df623.herokuapp.com%2F)
+
 - CSS
-  - No errors were found when passing through the official [<span style="color:orange">(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=+https%3A%2F%2Frichard9106.github.io%2Fremember-me-javaScript-essentials%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es)
+  - 17  errors were found when passing through the official [<span style="color:orange">(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmindwellproject4-c451517df623.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es)
+  this errors are because Bootstrap cdn so there is nothing that i can do, but if I give to de css validator my css files everything it's pass.
 
-- JavaScript - No errors were found when passing through the official [<span style="color:orange">Jshint validator](https://jshint.com/) 
+![error css validator](./static/images/readme_images/ccvalidator.png)
 
-   __Metrics__
-    -  There are 21 functions in this file.
-
-    - Function with the largest signature take 2 arguments, while the median is 0.
-
-    - Largest function has 19 statements in it, while the median is 4.
-
-    - The most complex function has a cyclomatic complexity value of 3 while the median is 1.
-
+## Validator Testing
+* PEP8
+    - All clear, no errors found, I passed all models and forms
 
 
 ###  Bugs (all the bugs are fixed)
 
-* If the player clicks on the cards before they are hidden, the code detects them as correct if they are even.
+* When we send forms the messages to display stay visibles in other pages if you are logIn  
 
-* If you lose the game and there is a card left, in the next game count that card as turned.
+* When the user try to eddit their info it's no showing the last info, so the user have to add all the info again
+
 
 <span style="color:Orange;"> 
 
