@@ -20,7 +20,7 @@ At MindWell, we understand that the journey to mental well-being can sometimes f
 - [<span style="color:orange"> Preformance](#performance-testing)
 - [<span style="color:orange"> Deployment](#deployment)
 - [<span style="color:orange"> Credits](#credits)
-- [<span style="color:orange"> Screenshots](#screenshots)
+
 
 
 
@@ -82,15 +82,20 @@ This website was made to help people to connect with therapist to help them with
 
 - Contain all the rellevant information about the website, things like how we work, the issues and possibles solutions, a list of therapist and contact forms.
 
-![Home page and others](./assets/images/pc2.jpg)
+![Home page and others](./static/images/readme_images/home1.png)
+![Home page and others](./static/images/readme_images/home2.jpeg)
 
 **Signup - Login**
 
 - The user can create an account or if already have one just logIn.
 
+<span style="display:flex; gap:10px">
 
-![LogIn - SingUp](./assets/images/countdown.jpg)
+![Log in](./static/images/readme_images/login.jpeg)
 
+![Log in](./static/images/readme_images/signup2.png)
+
+</span>
 
 **User Profile Page**
 
@@ -99,12 +104,15 @@ This website was made to help people to connect with therapist to help them with
 - In this page the user also can see theirs appointments. they can edit or delete them.
 
 
-![User information](./assets/images/movile5.jpg)
+![Profile](./static/images/readme_images/profile1.jpeg)
 
 
 **Therapis directory**
 
 - In the page "Look for a Therapist" the user have a full directory with therapist from everywhere. they can click any profile and see the info abou the selected therapist and in the same page make an appointment.
+
+![Therapist directory](./static/images/readme_images/directory.png)
+
 
 <span style="color:Orange;"> 
 
@@ -116,16 +124,16 @@ This website was made to help people to connect with therapist to help them with
 - If you're a therapist you can fil up our work with us form and you profile will be added to our directory 
 
 
-![User information](./assets/images/rules_11zon.jpg)
+![Therapist information](./static/images/readme_images/workwithus.jpeg)
 
 
 **About and contact page**
 
-- This pages contain info and contact page of MindWell
+- This pages contain info and contact form in case user needs to send specific messages to the owners
 
 <center>
 
-![User information](./assets/images/lose_11zon.jpg)
+![Contact page](./static/images/readme_images/contact.jpeg)
 
 </center>
 
@@ -142,6 +150,7 @@ This website was made to help people to connect with therapist to help them with
 
 ## Technologies used
 </span>
+
 ### HTML5
 
 - As a structure language.
@@ -241,11 +250,15 @@ I had some issues with bootstrap cdn loading time and some background images in 
     - All clear, no errors found, I passed all models and forms
 
 
+## Other Test
+
+ * Every application has some unit test to verify that the forms are working correctly. 
+
 ###  Bugs (all the bugs are fixed)
 
-* When we send forms the messages to display stay visibles in other pages if you are logIn  
+* When we send forms the messages to display stay visibles in other pages if you are logIn  <span style="color:red"> NO-FIXED </span>
 
-* When the user try to eddit their info it's no showing the last info, so the user have to add all the info again
+* When the user try to eddit their info it's no showing the last info, so the user have to add all the info again <span style="color:green"> FIXED </span>
 
 
 <span style="color:Orange;"> 
@@ -253,62 +266,55 @@ I had some issues with bootstrap cdn loading time and some background images in 
 # Deployment
 </span>
 The project was deployed on GitHub Pages. I used VsCode as a development environment where I commited all changes to git version control system.
-I used push command in VsCode save changes into GitHub.
+I used push command in VsCode save changes into GitHub /Heroku.
+
+<br>
+Since Github does not support Python, the deployment of the app, the website is made by Heroku
 
 To deploy a project I had to:
 
-* Log in to GitHub and click on repository to deploy ([<span style="color:orange">remember-me-javaScript-essentials](https://github.com/richard9106/remember-me-javaScript-essentials))
+* Log in to Heroku, create a new app, add the Config Vars, and connect trought GitHUb.
+* Choose the right repository and click deploy button.
+>  Your site is published at https://mindwellproject4-c451517df623.herokuapp.com/
+
+* Log in to GitHub and click on repository to deploy ([<span style="color:orange">MindWell-project-4](https://github.com/richard9106/MindWell-project-4))
 * select `Settings` and find GitHub Pages section at the very bottom of the page
 * from source select `none` and then `Milestone-Projects` branch.
-* click `save` and page was deployed after auto-refresh.
->  Your site is published at https://richard9106.github.io/remember-me-javaScript-essentials/
 
-To run localy:
-
-### Firts method
+### To run localy:
+ 
 * Log in to VScode account and link your repository to be open with VScode.
-### Second method
-* Creating a virtual space in gitHub https://github.com/richard9106/remember-me-javaScript-essentials open the repository and then click on CODE green buttom and create a virtual space.
 
-* once it has been created you can open it with VScode directly from your virtual space.
+* Creating a virtual space in gitHub https://github.com/richard9106/MindWell-project-4 open the repository and then click on CODE green buttom and create a virtual space.
+
+* once it has been created you can open it with VScode directly from your virtual space, you have to install  the requirements.txt using the command 
+
+> pip install -r requirements.txt
+
+* Last thing add <span style="color:orange;"> env.py </span>  with the missing variables for the settings like in this case Cloudinary and ElephantSql data base info (User, Key, Apikey, etc.)
 
 <span style="color:Orange;"> 
 
 ## Credits
+
 </span>
 
 * To complete this project I used Code Institute student template: [<span style="color:orange">gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
 * Ideas and knowledge library:
 
-    * [<span style="color:orange">w3schools.com](https://www.w3schools.com/js/default.asp)  I used code for JavaScript set interlvar functions.
+  > https://codepen.io/Sakilmurad/pen/GRNrvqX
 
-https://codepen.io/Sakilmurad/pen/GRNrvqX
+  > https://www.youtube.com/watch?v=Kj7f76WdtqU&t=184s
+
+  >https://www.youtube.com/watch?v=8m3W769YnEc
+
 
 ### Images:
 
 * link images page [<span style="color:orange">Canva](https://www.canva.com/)
 * icons from [<span style="color:orange">font Awesome](https://fontawesome.com/icons)
+* Images Profiles [<span style="color:orange">Pexel](https://www.pexels.com/es-es/buscar/recursos%20digitales/)
 
 
-### Content
 
--
-
-### Media
-
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
-
-<span style="color:Orange;"> 
-
-# Screenshots
-</span>
-
-## Project screenshots
-
-![responsiveness Iphones](./assets/images/iphonesAndMac.jpg)
-![page 1](./assets/images/page1.jpg)
-![page 2](./assets/images/page2.jpg)
-![page 3](./assets/images/page3.jpg)
-![page 4](./assets/images/page4.jpg)
