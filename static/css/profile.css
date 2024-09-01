@@ -8,6 +8,11 @@
   overflow: hidden;
   border-radius: 50%;
 }
+.th-img{
+  display: block;
+  width: 75px;
+  height: 75px;
+}
 img.image-profile {
   border-radius: 50%;
   aspect-ratio: 1/1;

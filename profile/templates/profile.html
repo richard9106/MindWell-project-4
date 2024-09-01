@@ -62,9 +62,9 @@
             type="button"
             class="btn btn-success"
             data-bs-toggle="modal"
-            data-bs-target="#eddit-profile"
+            data-bs-target="#edit-profile"
           >
-            Eddit my profile
+            Edit my profile
           </button>
           <button
             class="btn btn-danger"
@@ -96,9 +96,9 @@
             <tbody>
               {%if appointments%}
               {% for appointments_info in appointments %} 
-              <tr ">
+              <tr>
                 <th scope="row"> 
-                  <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=50 height=50 gravity="faces" crop="fill" loading="lazy"%}
+                  <a href="{% url 'therapist_profile' appointments_info.therapist.first_name %}" class="th-img">{%cloudinary appointments_info.therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" loading="lazy"%}
                   </a>
                 </th>
                 <td>{{appointments_info.therapist}}</td>
@@ -110,7 +110,7 @@
                 </td>
               </tr>
 
-              <!--eddit appointment modal-->
+              <!--edit appointment modal-->
               <div class="modal" tabindex="-1" id="{{appointments_info.pk}}">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -127,7 +127,7 @@
                       </div>
                       <div class="modal-footer border-0">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" id="eddit_appointment" class="btn btn-success">Save</button>
+                        <button type="submit" id="edit_appointment" class="btn btn-success">Save</button>
                       </div>
                     </form>
                     </div>
@@ -150,9 +150,9 @@
 <!-- modal form to edit profile  -->
 <div
   class="modal fade"
-  id="eddit-profile"
+  id="edit-profile"
   tabindex="-1"
-  aria-labelledby="eddit-profilelLabel"
+  aria-labelledby="edit-profilelLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog">
@@ -166,7 +166,7 @@
         ></button>
       </div>
       <div>
-        <h3 class="modal-title fs-2 text-center" id="eddit-profileLabel">
+        <h3 class="modal-title fs-2 text-center" id="edit-profileLabel">
           My Profile
         </h3>
         <p class="text-center fw-lighter mb-0 mt-3">
@@ -245,7 +245,7 @@
     let currentUrl = location.pathname;
     if (currentUrl == "/profile/")
       setTimeout(function () {
-        $("#eddit-profile").modal("show");
+        $("#edit-profile").modal("show");
       }, 1000);
   });
 </script>
