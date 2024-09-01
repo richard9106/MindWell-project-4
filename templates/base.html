@@ -88,7 +88,7 @@
             </li>
           </ul>
           {% if user.is_authenticated %}
-            <div class="d-flex ">
+            <div class="d-flex">
               <span><i class="fa-solid fa-user"></i>{{user}}</span>
               <span class="mx-3">|</span>
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout'%}">Logout</a>
