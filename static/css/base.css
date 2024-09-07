@@ -126,6 +126,9 @@ li {
 .bg-primario{
   background-color: var(--primario);
 }
+.bg-secundario{
+  background-color: #5f564e63!important;
+}
 .check-icon {
   color: #1c532c;
   font-size: 2rem;

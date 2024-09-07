@@ -16,11 +16,11 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if therapist.profile_image.url %}
-                                <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
+                                <a href="{% url 'therapist_profile' therapist.TherapistId %}" class="post-link">
                                 {% cloudinary therapist.profile_image quality="auto" width=500 height=500 gravity="faces" crop="fill" alt="Therapist photo" format="webp" loading="lazy"%}
                                 </a>
                                 {% else %}
-                                <a href="{% url 'therapist_profile' therapist.first_name %}" class="post-link">
+                                <a href="{% url 'therapist_profile' therapist.TherapistId %}" class="post-link">
                                 <img class="card-img-top" src=" {% static 'images/default.jpg' %} "
                                   alt="{{ therapy.first_name}}">
                                 </a>

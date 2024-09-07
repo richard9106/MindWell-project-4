@@ -43,40 +43,37 @@ HOURS_CHOICES = [
         ('17:00', '5:00 PM'),
     ]
 
-
-# Create your models here.
 class AppointmentManager(models.Model):
-    """Model for link user and their appointments"""
-    client = models.ForeignKey(User,
-                               on_delete=models.CASCADE,
-                               related_name='user_appointment',
-                               )
-    therapist = models.ForeignKey(Therapists,
-                                  on_delete=models.CASCADE,
-                                  related_name='therapist')
+    """Model for linking user and their appointments"""
+    client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_appointment')
+    therapist = models.ForeignKey(Therapists, on_delete=models.CASCADE, related_name='therapist')
     date = models.DateField(null=True, blank=True)
     time = models.CharField(max_length=5, choices=HOURS_CHOICES)
     message = models.TextField()
 
     class Meta:
-        """ Evitar citas duplicadas en la misma fecha y hora con el mismo terapeuta """
+        """Prevent duplicate appointments with the same therapist, date, and time"""
         ordering = ["date"]
-        # Añadimos una restricción única a nivel de base de datos (opcional)
         unique_together = ['therapist', 'date', 'time']
 
     def __str__(self):
-        """ Show the name in the list of therapists admin """
+        """Show the appointment details"""
         return f"{self.client} has an appointment on: {self.date} at {self.time}"
     
     def clean(self):
         """
-        Validación personalizada para evitar citas duplicadas
+        Custom validation to prevent duplicate appointments
         """
-        # Verifica si ya existe una cita con el mismo terapeuta, fecha y hora
-        if AppointmentManager.objects.filter(therapist=self.therapist, date=self.date, time=self.time).exists():
-            raise ValidationError("Este terapeuta ya tiene una cita en esta fecha y hora.")
+        if AppointmentManager.objects.filter(
+            therapist_id=self.therapist_id, date=self.date, time=self.time
+        ).exclude(pk=self.pk).exists():
+            return "This therapist already has an appointment at this date and time."
+        return None
     
     def save(self, *args, **kwargs):
-        # Llama a la validación personalizada antes de guardar
-        self.clean()
+        # Call custom validation before saving
+        error_message = self.clean()
+        if error_message:
+            # Handle the error message in the view
+            raise ValidationError(error_message)
         super().save(*args, **kwargs)

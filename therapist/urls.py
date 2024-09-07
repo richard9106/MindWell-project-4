@@ -6,7 +6,5 @@ from . import views
 
 urlpatterns = [
     path('', views.therapilist, name="therapists"),
-    path('<first_name>/',
-         views.therapist_profile,
-         name='therapist_profile'),
+    path('<int:therapist_id>/',views.therapist_profile, name='therapist_profile'),
 ]
