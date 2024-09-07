@@ -1,21 +1,20 @@
 /*Utilities______________________*/
 
 /*Hero content___________________*/
+
+
 .hero-container {
   display: flex;
-  height: 90vh;
+  justify-content: start;
+  height: 80vh;
   background-repeat: no-repeat; 
-  background-image:linear-gradient(
-    rgba(255, 255, 255, 0.541),
-    rgba(255, 255, 255, 0.5)
-  ), url("/static/images/fondo1.webp");
-  background-size: contain;
+  background-image:url("/static/images/bg-mind3.png");
+  background-size: cover;
+  background-position: top -30px left;
   
 }
 
-.hero-container > div {
-  flex: 0 0 calc(50% - 10px);
-}
+
 .hero-info {
   display: grid;
   align-content: center;
@@ -23,92 +22,37 @@
 .hero-content-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 50%;
   height: 60vh;
-  margin: 0 auto;
+  margin-left: 10px;
   justify-content: center;
   align-items: center;
 }
-.hero-container-images {
-  position: relative;
-  text-align: center;
-  top: 0;
-  left: 0;
-}
-.hero-images {
-  position: absolute;
-}
-.img-front {
-  width: 50%;
-  height: auto;
-  border-left: 4px solid var(--primario);
-  border-bottom: 4px solid var(--primario);
-  z-index: 1;
-  right: 100px;
-  top: 50px;
-}
-.img-back {
-  width: 50%;
-  height: auto;
-  border-left: 4px solid var(--primario);
-  border-bottom: 4px solid var(--primario);
-  z-index: 1;
-  left: 0;
-  top: 20vw;
-}
-/*Responsive hero section*/
-@media (max-width: 1024px) {
-  .img-front {
-    width: 70%;
-    right: 0;
-  }
-  .img-back {
-    width: 60%;
-    top: 30vw;
-  }
-  .hero-container {
-    display: flex;
-    min-height: 60vh;
-  }
-}
+
+
 
 @media (max-width: 768px) {
-  .images-main-container {
-    display: none;
-  }
   .hero-container {
-    display: block;
-    max-height: 50vh;
+    display: flex;
+    justify-content: start;
+    height: 80vh;
+    background-image:url("/static/images/bg-mind3.png");
+    background-size: 100%;
+    background-position: left bottom;
+    background-color: var(--primario);
+    
   }
-  .hero-content-container {
-    width: 100%;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url("../images/img8.webp");
+  .hero-content-container{
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    background-image:url("/static/images/fondo1.webp");
+    background-size: 60%;
+    background-position: top center;
     background-repeat: no-repeat;
-    background-size: 70%;
-    background-position: bottom 0 right -50px;
   }
-  .hero-content-container > h1,
-  .hero-content-container > p {
-    width: 90%;
-    margin: 10px auto;
-    text-align: center;
-  }
-  .hero-content-container > p {
-    margin-bottom: 10px;
-    padding: 5px;
-    color: var(--secundario);
-    font-weight: 500;
-    background: rgba(250, 137, 32, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
+
 }
 
 /*Services Section_____________________*/
@@ -204,6 +148,7 @@
 .work-with-us-section {
   margin-top: 50px;
   padding-bottom: 20px;
+  background-color: var(--primario);
 }
 .work-with-us-section > h3 {
   text-align: center;

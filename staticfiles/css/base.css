@@ -65,6 +65,10 @@ a.btn-login,
 a.btn-signup {
   font-size: 1.6rem;
 }
+a.btn-login:hover,
+a.btn-signup:hover {
+  color: #fa8920;
+}
 .btn-outline-success:hover {
   background-color: var(--primario);
   width: 200px;
@@ -105,11 +109,25 @@ li {
 }
 
 /*Utilities_______________________*/
+
+
+.bg-custom-lines{
+  background-repeat: no-repeat; 
+  background-image:url("/static/images/bg-lines.png");
+  background-size: cover;
+  background-position: center center;
+}
 .text-primario {
   color: var(--primario);
 }
 .text-secundario {
   color: var(--secundario);
+}
+.bg-primario{
+  background-color: var(--primario);
+}
+.bg-secundario{
+  background-color: #5f564e63!important;
 }
 .check-icon {
   color: #1c532c;
@@ -128,9 +146,9 @@ li {
 .bg-primario {
   background-color: var(--primario);
 }
-.btn-orange:hover {
+.btn-orange:hover, .btn-custom:hover{
   transform: scale(1.1);
-  background-color: var(--secundario);
+  background-color: var(--secundario)!important;
   color: white;
   border: #fa8920 1px solid;
   transition: all 0.2s;
@@ -174,10 +192,21 @@ form input[type="checkbox"] {
   min-height: auto;
 }
 
+/*MESSAGES________________________*/
+
+.message-container{
+  background-color: #5f564e;
+  border-radius: 15px;
+  border: 1px solid var(--primario);
+}
+
 /*Nab*/
 #navbarNav {
   display: flex;
   justify-content: space-between;
+}
+.nav-item{
+  margin-right: 10px;
 }
 .login-main-container {
   max-width: 600px;
