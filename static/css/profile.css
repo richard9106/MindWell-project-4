@@ -1,4 +1,8 @@
 /*USER PROFILE*/
+.card{
+  border-top: solid 5px var(--primario)!important;
+  z-index: 1;
+}
 
 .circular--landscape {
   display: inline-block;
@@ -67,4 +71,8 @@ img.image-profile {
   top: 10px;
   min-width: 40%;
   min-height: auto;
+}
+
+th{
+  color: var(--primario)!important;
 }

@@ -1,10 +1,20 @@
 
 
 # Project 4 Full-Stack Toolkit
+# Resubmision
+
+* Fix typos and improve form validation (dates, inputs).
+* Implement better sprint tracking and improve documentation in agile tools.
+* Include detailed manual tests and clear objectives in test cases.
+* Correct the deployment process mentioned in the documentation.
+* Improve commit messages and data schema clarity.
+
+
 
 # MindWell 
 
 At MindWell, we understand that the journey to mental well-being can sometimes feel like a solitary road. That's why we're here to bridge the gap between individuals seeking support and the expert guidance they deserve. Our platform serves as a beacon of hope, connecting you with licensed therapists who can provide the guidance, support, and tools necessary to navigate life's challenges with resilience and clarity.
+
 
 
 ![Responsice Mockup](./static/images/readme_images/img-d1.png)
@@ -258,7 +268,7 @@ I had some issues with bootstrap cdn loading time and some background images in 
 
 * When we send forms the messages to display stay visibles in other pages if you are logIn  <span style="color:red"> NO-FIXED </span>
 
-* When the user try to eddit their info it's no showing the last info, so the user have to add all the info again <span style="color:green"> FIXED </span>
+* When the user try to edit their info it's no showing the last info, so the user have to add all the info again <span style="color:green"> FIXED </span>
 
 
 <span style="color:Orange;"> 

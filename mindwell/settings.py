@@ -134,7 +134,7 @@ if 'test' in sys.argv:
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
-    "https://8000-richard9106-mindwellpro-rt8t9xvcciw.ws-eu115.gitpod.io"
+    "https://*.gitpod.io/"
 ]
 
 

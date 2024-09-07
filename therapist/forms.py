@@ -1,5 +1,6 @@
 """Import form and models """
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import AppointmentManager
 
 

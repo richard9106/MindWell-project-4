@@ -4,11 +4,11 @@
 
 <!-- displaying Django messages -->
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-end mt-3">
     <div class="col-md-4">
       {% for message in messages %}
       <div
-        class="alert {{ message.tags }} alert-dismissible
+        class="alert alert-{{ message.tags }} alert-dismissible
           fade show"
         id="msg"
         role="alert"
@@ -27,11 +27,11 @@
 </div>
 
 <!--Main content-->
-<div class="container-lg container-md-fluid mt-5">
+<div class="p-5">
   <div class="row">
     <div class="col-lg-4">
       <!-- Info Profile  -->
-      <div class="card border round-2 shadow p-lg-5 p-md-5 mb-3">
+      <div class="card border round-2 shadow p-lg-5 p-md-5 mb-3 custom-card">
         <div class="card-body">
           <div class="mx-auto text-center">
             <img
@@ -42,7 +42,7 @@
             />
           </div>
           <div class="text-center profile-name" >
-            <p id="first_name" class=" h2 fw-bold">{{user.profile.first_name}}</p>
+            <p id="first_name" class="text-primario h2 fw-bold">{{user.profile.first_name}}</p>
             <p id="Last_name_id">{{user.profile.last_name}}</p>
           </div>
           
@@ -50,9 +50,9 @@
             <strong> {{user.profile.profession }}</strong>
           </p>
           <hr />
-          <p >Email:<strong> <span id="email">{{user.profile.email }}</span></strong></p>
-          <p>Location:<span id="location">{{user.profile.location }}</span></p>
-          <p>About Me:</p>
+          <p ><strong class="text-primario fw-bold ">Email:</strong> <span id="email">{{user.profile.email }}</span></p>
+          <p><strong class="text-primario fw-bold">Location:</strong><span id="location">{{user.profile.location }}</span></p>
+          <p><strong class="text-primario fw-bold">About Me:</strong></p>
           <p class="text-justify" id="description">{{user.profile.description}}</p>
         </div>
 
@@ -84,10 +84,10 @@
           <h3 class="apointments-title mb-5 text-center">My appointments</h3>
 
           <table class="table">
-            <thead>
-              <tr>
+            <thead class="bg-primario">
+              <tr class="text-primario">
                 <th scope="col"> </th>
-                <th scope="col">Who</th>
+                <th scope="col ">Who</th>
                 <th scope="col">When</th>
                 <th scope="col">Time</th>
                 <th scope="col">Options</th>

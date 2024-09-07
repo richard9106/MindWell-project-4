@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-<div class="container  ">
+<div class="container ">
     <h2 class="text-center my-sm-0  my-lg-5 about-title">Contact us</h2>
     <div class="row flex-c-reverse gap-3" >
     <!-- contact form  -->
@@ -11,7 +11,7 @@
             <form method="POST"  class="p-5">
               {% csrf_token%} 
               {{form|crispy }}
-              <button type="submit" class="btn btn-success mt-3">
+              <button type="submit" class="btn btn-orange btn-large mt-3">
                 Send
               </button>
             </form>
@@ -43,8 +43,8 @@
 
     <!-- Content Conatac page -->
       <div class="  mb-md-5 col">
-        <div class="mt-5">
-        
+        <div class="mt-5 card p-3 text-center">
+          <h3 class="my-3">We’re glad to get to know you!</h3>
           <p>
             Welcome to our Contact Page! We value your feedback, inquiries, and suggestions. Whether you have questions about our services, need assistance navigating the platform, or want to provide us with valuable insights, we're here to listen and assist you every step of the way.
           </p>

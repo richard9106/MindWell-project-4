@@ -2,6 +2,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
 
 
 # Create your models here.
@@ -58,9 +59,24 @@ class AppointmentManager(models.Model):
     message = models.TextField()
 
     class Meta:
-        """ order by name"""
+        """ Evitar citas duplicadas en la misma fecha y hora con el mismo terapeuta """
         ordering = ["date"]
+        # Añadimos una restricción única a nivel de base de datos (opcional)
+        unique_together = ['therapist', 'date', 'time']
 
     def __str__(self):
-        """ Show the name in the list of therapisd admin"""
-        return f"{self.client} have an appointmet in :{self.date} "
+        """ Show the name in the list of therapists admin """
+        return f"{self.client} has an appointment on: {self.date} at {self.time}"
+    
+    def clean(self):
+        """
+        Validación personalizada para evitar citas duplicadas
+        """
+        # Verifica si ya existe una cita con el mismo terapeuta, fecha y hora
+        if AppointmentManager.objects.filter(therapist=self.therapist, date=self.date, time=self.time).exists():
+            raise ValidationError("Este terapeuta ya tiene una cita en esta fecha y hora.")
+    
+    def save(self, *args, **kwargs):
+        # Llama a la validación personalizada antes de guardar
+        self.clean()
+        super().save(*args, **kwargs)

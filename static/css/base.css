@@ -109,11 +109,22 @@ li {
 }
 
 /*Utilities_______________________*/
+
+
+.bg-custom-lines{
+  background-repeat: no-repeat; 
+  background-image:url("/static/images/bg-lines.png");
+  background-size: cover;
+  background-position: center center;
+}
 .text-primario {
   color: var(--primario);
 }
 .text-secundario {
   color: var(--secundario);
+}
+.bg-primario{
+  background-color: var(--primario);
 }
 .check-icon {
   color: #1c532c;
@@ -176,6 +187,14 @@ form input {
 }
 form input[type="checkbox"] {
   min-height: auto;
+}
+
+/*MESSAGES________________________*/
+
+.message-container{
+  background-color: #5f564e;
+  border-radius: 15px;
+  border: 1px solid var(--primario);
 }
 
 /*Nab*/

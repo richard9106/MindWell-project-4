@@ -11,11 +11,16 @@
   flex: 0 0 calc(50%);
 }
 .work-with-us-form-container {
+  background-color: rgba(28, 83, 43, 0.8)!important;
+  backdrop-filter: 50%!important;
   padding: 20px;
   border: 1px solid var(--primario);
   border-radius: 10px;
 }
 
+.work-with-us-form-container label{
+  color: var(--primario)!important;
+}
 .work-with-us-title {
   color: var(--secundario);
 }
